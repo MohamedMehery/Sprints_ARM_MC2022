@@ -1,0 +1,14 @@
+.\objects\gpt.o: MCAL\Gpt.c
+.\objects\gpt.o: .\LIBRARIES\Common\Std_Types.h
+.\objects\gpt.o: .\LIBRARIES\Common\Platform_Types.h
+.\objects\gpt.o: .\LIBRARIES\Common\Compiler.h
+.\objects\gpt.o: .\MCAL\Inc\Gpt.h
+.\objects\gpt.o: .\MCAL\Inc\Gpt_Types.h
+.\objects\gpt.o: .\MCAL\Inc\IntCtrl_Types.h
+.\objects\gpt.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\gpt.o: .\LIBRARIES\Config\Inc\Gpt_Cfg.h
+.\objects\gpt.o: .\MCAL\Inc\IntCtrl.h
+.\objects\gpt.o: .\LIBRARIES\Config\Inc\IntCtrl_Cfg.h
+.\objects\gpt.o: .\MCAL\Inc\Gpt_regs.h
+.\objects\gpt.o: .\LIBRARIES\Common\Mcu_Hw.h
+.\objects\gpt.o: .\LIBRARIES\Common\Macros.h

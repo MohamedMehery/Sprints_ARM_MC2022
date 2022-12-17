@@ -1,0 +1,11 @@
+.\objects\dio.o: MCAL\Dio.c
+.\objects\dio.o: .\LIBRARIES\Common\Std_Types.h
+.\objects\dio.o: .\LIBRARIES\Common\Platform_Types.h
+.\objects\dio.o: .\LIBRARIES\Common\Compiler.h
+.\objects\dio.o: .\MCAL\Inc\Dio.h
+.\objects\dio.o: .\LIBRARIES\Config\Inc\Dio_Cfg.h
+.\objects\dio.o: .\MCAL\Inc\Dio_Types.h
+.\objects\dio.o: .\MCAL\Inc\Port_Types.h
+.\objects\dio.o: .\MCAL\Inc\Dio_regs.h
+.\objects\dio.o: .\MCAL\Inc\Port_regs.h
+.\objects\dio.o: .\LIBRARIES\Common\Macros.h

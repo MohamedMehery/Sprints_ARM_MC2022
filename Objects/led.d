@@ -1,0 +1,11 @@
+.\objects\led.o: HAL\Led.c
+.\objects\led.o: .\LIBRARIES\Common\Std_Types.h
+.\objects\led.o: .\LIBRARIES\Common\Platform_Types.h
+.\objects\led.o: .\LIBRARIES\Common\Compiler.h
+.\objects\led.o: .\HAL\Inc\Led.h
+.\objects\led.o: .\MCAL\Inc\Dio.h
+.\objects\led.o: .\LIBRARIES\Config\Inc\Dio_Cfg.h
+.\objects\led.o: .\MCAL\Inc\Dio_Types.h
+.\objects\led.o: .\MCAL\Inc\Port_Types.h
+.\objects\led.o: .\MCAL\Inc\Port.h
+.\objects\led.o: .\LIBRARIES\Config\Inc\Port_Cfg.h
