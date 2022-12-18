@@ -38,13 +38,13 @@ typedef struct
 	Dio_PinType pinId;
 } Dio_ChannelConfigType;
 
-/* Type definition for Dio_LevelType used by the DIO APIs */
+/* Type definition for Dio_Level_t used by the DIO APIs */
 typedef enum
 {
 	DIO_LEVEL_ERROR = -1,
 	DIO_LEVEL_LOW = 0,
 	DIO_LEVEL_HIGH = 1
-} Dio_LevelType;
+} Dio_Level_t;
 
 /* Type definition for Dio_PortLevelType used by the DIO APIs */
 typedef uint8_t Dio_PortLevelType;

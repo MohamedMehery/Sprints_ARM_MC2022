@@ -27,37 +27,62 @@ Project File Date:  12/16/2022
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 6 (build 750)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'Target 1'
-compiling Gpt_Lcfg.c...
-compiling IntCtrl.c...
-MCAL\IntCtrl.c(58): warning:  #111-D: statement is unreachable
-  					break;
-MCAL\IntCtrl.c(95): warning:  #111-D: statement is unreachable
-  					break;
-MCAL\IntCtrl.c(108): warning:  #111-D: statement is unreachable
-  					break;
-MCAL\IntCtrl.c(111): warning:  #111-D: statement is unreachable
-  					break;
-MCAL\IntCtrl.c(114): warning:  #111-D: statement is unreachable
-  					break;
-MCAL\IntCtrl.c(131): warning:  #186-D: pointless comparison of unsigned integer with zero
-  			if ((irq_id >= 0) && (irq_id > 32))
-MCAL\IntCtrl.c(172): warning:  #186-D: pointless comparison of unsigned integer with zero
-  			if ((irq_id >= 0) && (irq_id > 32))
-MCAL\IntCtrl.c(226): warning:  #186-D: pointless comparison of unsigned integer with zero
-  	if ((irq_id >= 0) && (irq_id < 32))
-MCAL\IntCtrl.c(267): warning:  #186-D: pointless comparison of unsigned integer with zero
-  	if ((InterruptId >= 0) && (InterruptId > 32))
-MCAL\IntCtrl.c: 9 warnings, 0 errors
-compiling Gpt.c...
-MCAL\Gpt.c(49): warning:  #188-D: enumerated type mixed with another type
-  	volatile Gpt_TimerInterruptType interruptId = 0;
-MCAL\Gpt.c(171): warning:  #188-D: enumerated type mixed with another type
-  	volatile Gpt_TimerInterruptType interruptId = 0;
-MCAL\Gpt.c(252): warning:  #188-D: enumerated type mixed with another type
-  	volatile Gpt_TimerInterruptType interruptId = 0;
-MCAL\Gpt.c(706): warning:  #1-D: last line of file ends without a newline
+compiling App.c...
+.\HAL\Inc\Led.h(96): warning:  #1-D: last line of file ends without a newline
    *********************************************************************************************************************/
-MCAL\Gpt.c: 4 warnings, 0 errors
+.\HAL\Inc\Button.h(66): warning:  #1-D: last line of file ends without a newline
+   *********************************************************************************************************************/
+.\APPLICATION\Inc\App.h(40): warning:  #1-D: last line of file ends without a newline
+   *********************************************************************************************************************/
+.\SERVICE\Inc\Service_Types.h(40): warning:  #1-D: last line of file ends without a newline
+  *********************************************************************************************************************/
+.\SERVICE\Inc\Input.h(45): warning:  #1-D: last line of file ends without a newline
+  *********************************************************************************************************************/
+.\SERVICE\Inc\Blink.h(55): warning:  #1-D: last line of file ends without a newline
+  *********************************************************************************************************************/
+APPLICATION\App.c(29): warning:  #111-D: statement is unreachable
+  	return 0;
+APPLICATION\App.c(30): warning:  #1-D: last line of file ends without a newline
+  }
+APPLICATION\App.c: 8 warnings, 0 errors
+compiling Led.c...
+.\HAL\Inc\Led.h(96): warning:  #1-D: last line of file ends without a newline
+   *********************************************************************************************************************/
+HAL\Led.c(107): warning:  #1-D: last line of file ends without a newline
+   *********************************************************************************************************************/
+HAL\Led.c: 2 warnings, 0 errors
+compiling Button.c...
+.\HAL\Inc\Button.h(66): warning:  #1-D: last line of file ends without a newline
+   *********************************************************************************************************************/
+HAL\Button.c(80): warning:  #1-D: last line of file ends without a newline
+   *********************************************************************************************************************/
+HAL\Button.c: 2 warnings, 0 errors
+compiling Dio_Lcfg.c...
+compiling Gpt_Lcfg.c...
+compiling Input.c...
+.\HAL\Inc\Led.h(96): warning:  #1-D: last line of file ends without a newline
+   *********************************************************************************************************************/
+.\HAL\Inc\Button.h(66): warning:  #1-D: last line of file ends without a newline
+   *********************************************************************************************************************/
+.\SERVICE\Inc\Service_Types.h(40): warning:  #1-D: last line of file ends without a newline
+  *********************************************************************************************************************/
+.\SERVICE\Inc\Input.h(45): warning:  #1-D: last line of file ends without a newline
+  *********************************************************************************************************************/
+SERVICE\Input.c(101): warning:  #1-D: last line of file ends without a newline
+   *********************************************************************************************************************/
+SERVICE\Input.c: 5 warnings, 0 errors
+compiling Blink.c...
+.\HAL\Inc\Led.h(96): warning:  #1-D: last line of file ends without a newline
+   *********************************************************************************************************************/
+.\HAL\Inc\Button.h(66): warning:  #1-D: last line of file ends without a newline
+   *********************************************************************************************************************/
+.\SERVICE\Inc\Service_Types.h(40): warning:  #1-D: last line of file ends without a newline
+  *********************************************************************************************************************/
+.\SERVICE\Inc\Blink.h(55): warning:  #1-D: last line of file ends without a newline
+  *********************************************************************************************************************/
+SERVICE\Blink.c(130): warning:  #1-D: last line of file ends without a newline
+   *********************************************************************************************************************/
+SERVICE\Blink.c: 5 warnings, 0 errors
 compiling Dio.c...
 MCAL\Dio.c(48): warning:  #111-D: statement is unreachable
   			break;	
@@ -104,38 +129,10 @@ MCAL\Dio.c(292): warning:  #940-D: missing return statement at end of non-void f
 MCAL\Dio.c(337): warning:  #1-D: last line of file ends without a newline
    *********************************************************************************************************************/
 MCAL\Dio.c: 22 warnings, 0 errors
-compiling Port.c...
-MCAL\Port.c(239): warning:  #1-D: last line of file ends without a newline
-   *********************************************************************************************************************/
-MCAL\Port.c: 1 warning, 0 errors
-compiling Input.c...
-.\HAL\Inc\Led.h(96): warning:  #1-D: last line of file ends without a newline
-   *********************************************************************************************************************/
-.\HAL\Inc\Button.h(66): warning:  #1-D: last line of file ends without a newline
-   *********************************************************************************************************************/
-.\SERVICE\Inc\Service_Types.h(40): warning:  #1-D: last line of file ends without a newline
-  *********************************************************************************************************************/
-.\SERVICE\Inc\Input.h(45): warning:  #1-D: last line of file ends without a newline
-  *********************************************************************************************************************/
-SERVICE\Input.c(101): warning:  #1-D: last line of file ends without a newline
-   *********************************************************************************************************************/
-SERVICE\Input.c: 5 warnings, 0 errors
-compiling Blink.c...
-.\HAL\Inc\Led.h(96): warning:  #1-D: last line of file ends without a newline
-   *********************************************************************************************************************/
-.\HAL\Inc\Button.h(66): warning:  #1-D: last line of file ends without a newline
-   *********************************************************************************************************************/
-.\SERVICE\Inc\Service_Types.h(40): warning:  #1-D: last line of file ends without a newline
-  *********************************************************************************************************************/
-.\SERVICE\Inc\Blink.h(55): warning:  #1-D: last line of file ends without a newline
-  *********************************************************************************************************************/
-SERVICE\Blink.c(130): warning:  #1-D: last line of file ends without a newline
-   *********************************************************************************************************************/
-SERVICE\Blink.c: 5 warnings, 0 errors
 linking...
 Program Size: Code=5234 RO-data=1030 RW-data=500 ZI-data=1844  
 FromELF: creating hex file...
-".\Objects\Blinking_led.axf" - 0 Error(s), 46 Warning(s).
+".\Objects\Blinking_led.axf" - 0 Error(s), 44 Warning(s).
 
 <h2>Software Packages used:</h2>
 

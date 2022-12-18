@@ -97,7 +97,7 @@ void Led_Toggle(Led_LedChannelType LedChannel)
 void Led_RefreshOutput(Led_LedChannelType LedChannel)
 {
 	/* Read the current state */
-    Dio_LevelType state = Dio_ReadChannel(LedChannel);
+    Dio_Level_t state = Dio_ReadChannel(LedChannel);
 	
 	/* Re-write the same state */
     Dio_WriteChannel(LedChannel, state);

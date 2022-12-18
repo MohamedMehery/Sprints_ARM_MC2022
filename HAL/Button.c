@@ -48,7 +48,7 @@ void Button_Init(void)
 *******************************************************************************/
 Button_State Button_GetState(Button_ButtonChannel_t ButtonChannel, Button_ButtonAttachType ButtonAttach)
 {
-	Dio_LevelType testLevel = DIO_LEVEL_LOW;
+	Dio_Level_t testLevel = DIO_LEVEL_LOW;
 	
 	if (ButtonAttach == PULL_UP)
 		testLevel = DIO_LEVEL_LOW;
