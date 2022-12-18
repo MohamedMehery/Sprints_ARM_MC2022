@@ -32,14 +32,21 @@ compiling Input.c...
    *********************************************************************************************************************/
 .\HAL\Inc\Button.h(66): warning:  #1-D: last line of file ends without a newline
    *********************************************************************************************************************/
+.\MCAL\Inc\Gpt_Types.h(46): error:  #256: invalid redeclaration of type name "Gpt_Channel_t"  (declared at line 25 of ".\HAL\Inc\Button.h")
+  } Gpt_Channel_t;
 .\SERVICE\Inc\Service_Types.h(40): warning:  #1-D: last line of file ends without a newline
   *********************************************************************************************************************/
 .\SERVICE\Inc\Input.h(45): warning:  #1-D: last line of file ends without a newline
   *********************************************************************************************************************/
+SERVICE\Input.c(50): warning:  #188-D: enumerated type mixed with another type
+  	while (Button_GetState(MasterDeviceChannel, ButtonAttach) == BUTTON_RELEASED);
+SERVICE\Input.c(63): warning:  #188-D: enumerated type mixed with another type
+  		if (Button_GetState(MasterDeviceChannel, ButtonAttach) == BUTTON_PRESSED)
+SERVICE\Input.c(76): warning:  #188-D: enumerated type mixed with another type
+  		else if (Button_GetState(SlaveDeviceChannel, ButtonAttach) == BUTTON_PRESSED)
 SERVICE\Input.c(101): warning:  #1-D: last line of file ends without a newline
    *********************************************************************************************************************/
-SERVICE\Input.c: 5 warnings, 0 errors
-compiling Gpt_Lcfg.c...
+SERVICE\Input.c: 8 warnings, 1 error
 compiling App.c...
 .\HAL\Inc\Led.h(96): warning:  #1-D: last line of file ends without a newline
    *********************************************************************************************************************/
@@ -47,43 +54,44 @@ compiling App.c...
    *********************************************************************************************************************/
 .\APPLICATION\Inc\App.h(40): warning:  #1-D: last line of file ends without a newline
    *********************************************************************************************************************/
+.\MCAL\Inc\Gpt_Types.h(46): error:  #256: invalid redeclaration of type name "Gpt_Channel_t"  (declared at line 25 of ".\HAL\Inc\Button.h")
+  } Gpt_Channel_t;
 .\SERVICE\Inc\Service_Types.h(40): warning:  #1-D: last line of file ends without a newline
   *********************************************************************************************************************/
 .\SERVICE\Inc\Input.h(45): warning:  #1-D: last line of file ends without a newline
   *********************************************************************************************************************/
 .\SERVICE\Inc\Blink.h(55): warning:  #1-D: last line of file ends without a newline
   *********************************************************************************************************************/
+APPLICATION\App.c(13): warning:  #188-D: enumerated type mixed with another type
+  	uint8_t onPeriod = get_pulse_timing(button1, LED_2, button2, LED_3, PULL_UP);
+APPLICATION\App.c(21): warning:  #188-D: enumerated type mixed with another type
+  	uint8_t offPeriod = get_pulse_timing(button1, LED_2, button2, LED_3, PULL_UP);
 APPLICATION\App.c(29): warning:  #111-D: statement is unreachable
   	return 0;
 APPLICATION\App.c(30): warning:  #1-D: last line of file ends without a newline
   }
-APPLICATION\App.c: 8 warnings, 0 errors
-compiling Gpt.c...
-MCAL\Gpt.c(49): warning:  #188-D: enumerated type mixed with another type
-  	volatile Gpt_TimerInterruptType interruptId = 0;
-MCAL\Gpt.c(171): warning:  #188-D: enumerated type mixed with another type
-  	volatile Gpt_TimerInterruptType interruptId = 0;
-MCAL\Gpt.c(252): warning:  #188-D: enumerated type mixed with another type
-  	volatile Gpt_TimerInterruptType interruptId = 0;
-MCAL\Gpt.c(706): warning:  #1-D: last line of file ends without a newline
-   *********************************************************************************************************************/
-MCAL\Gpt.c: 4 warnings, 0 errors
+APPLICATION\App.c: 10 warnings, 1 error
 compiling Blink.c...
 .\HAL\Inc\Led.h(96): warning:  #1-D: last line of file ends without a newline
    *********************************************************************************************************************/
 .\HAL\Inc\Button.h(66): warning:  #1-D: last line of file ends without a newline
    *********************************************************************************************************************/
+.\MCAL\Inc\Gpt_Types.h(46): error:  #256: invalid redeclaration of type name "Gpt_Channel_t"  (declared at line 25 of ".\HAL\Inc\Button.h")
+  } Gpt_Channel_t;
 .\SERVICE\Inc\Service_Types.h(40): warning:  #1-D: last line of file ends without a newline
   *********************************************************************************************************************/
 .\SERVICE\Inc\Blink.h(55): warning:  #1-D: last line of file ends without a newline
   *********************************************************************************************************************/
 SERVICE\Blink.c(130): warning:  #1-D: last line of file ends without a newline
    *********************************************************************************************************************/
-SERVICE\Blink.c: 5 warnings, 0 errors
-linking...
-Program Size: Code=5234 RO-data=1030 RW-data=500 ZI-data=1844  
-FromELF: creating hex file...
-".\Objects\Blinking_led.axf" - 0 Error(s), 22 Warning(s).
+SERVICE\Blink.c: 5 warnings, 1 error
+compiling Button.c...
+.\HAL\Inc\Button.h(66): warning:  #1-D: last line of file ends without a newline
+   *********************************************************************************************************************/
+HAL\Button.c(80): warning:  #1-D: last line of file ends without a newline
+   *********************************************************************************************************************/
+HAL\Button.c: 2 warnings, 0 errors
+".\Objects\Blinking_led.axf" - 3 Error(s), 25 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -125,7 +133,8 @@ Package Vendor: Keil
       Include file:  Device\Include\TM4C123\TM4C123.h
       Source file:   Device\Source\ARM\startup_TM4C123.s
       Source file:   Device\Source\system_TM4C123.c
-Build Time Elapsed:  00:00:02
+Target not created.
+Build Time Elapsed:  00:00:00
 </pre>
 </body>
 </html>

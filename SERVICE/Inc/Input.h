@@ -37,7 +37,7 @@
 *******************************************************************************/
 uint8_t get_pulse_timing(Service_DeviceChannel MasterDeviceChannel, Service_DeviceChannel MasterStatusChannel,\
 							Service_DeviceChannel SlaveDeviceChannel, Service_DeviceChannel SlaveStatusChannel,\
-							Button_ButtonAttachType ButtonAttach);
+							Gpt_Channel_t ButtonAttach);
  
 #endif /* Input_H_ */
 /**********************************************************************************************************************

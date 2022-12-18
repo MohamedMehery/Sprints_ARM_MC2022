@@ -38,7 +38,7 @@
 * Return value: void
 * Description: Function to initialize the connected devices and get the number of pulses as input
 *******************************************************************************/
-uint8_t get_pulse_timing(Service_DeviceChannel MasterDeviceChannel, Service_DeviceChannel MasterStatusChannel, Service_DeviceChannel SlaveDeviceChannel, Service_DeviceChannel SlaveStatusChannel, Button_ButtonAttachType ButtonAttach)
+uint8_t get_pulse_timing(Service_DeviceChannel MasterDeviceChannel, Service_DeviceChannel MasterStatusChannel, Service_DeviceChannel SlaveDeviceChannel, Service_DeviceChannel SlaveStatusChannel, Gpt_Channel_t ButtonAttach)
 {
 	/* Initialize all the devices */
 	Led_Init();
