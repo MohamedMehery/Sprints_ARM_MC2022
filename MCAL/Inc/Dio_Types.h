@@ -25,18 +25,18 @@
 /* Type definition for Dio_Channel_t used by the DIO APIs */
 typedef uint8_t Dio_Channel_t;
 
-/* Type definition for Dio_PinType used by the DIO APIs */
-typedef Port_PinType Dio_PinType;
+/* Type definition for Dio_Pin_t used by the DIO APIs */
+typedef Port_PinType Dio_Pin_t;
 
-/* Type definition for Dio_PortType used by the DIO APIs */
-typedef Port_PortType Dio_PortType;
+/* Type definition for Dio_Port_t used by the DIO APIs */
+typedef Port_PortType Dio_Port_t;
 
-/* Type definition for Dio_ChannelConfigType used by the DIO APIs */
+/* Type definition for Dio_ChannelConfig_t used by the DIO APIs */
 typedef struct
 {
-	Dio_PortType portId;
-	Dio_PinType pinId;
-} Dio_ChannelConfigType;
+	Dio_Port_t portId;
+	Dio_Pin_t pinId;
+} Dio_ChannelConfig_t;
 
 /* Type definition for Dio_Level_t used by the DIO APIs */
 typedef enum
@@ -46,8 +46,8 @@ typedef enum
 	DIO_LEVEL_HIGH = 1
 } Dio_Level_t;
 
-/* Type definition for Dio_PortLevelType used by the DIO APIs */
-typedef uint8_t Dio_PortLevelType;
+/* Type definition for Dio_PortLevel_t used by the DIO APIs */
+typedef uint8_t Dio_PortLevel_t;
 
 #endif  /* DIO_TYPES_H_ */
 

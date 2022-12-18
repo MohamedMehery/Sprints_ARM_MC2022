@@ -8,7 +8,7 @@
  *  
  *  -------------------------------------------------------------------------------------------------------------------
  *	Author: 	  Mohamed Abdelnasser
- *	Date:		  5/12/2022
+ *	Date:		  	5/12/2022
  *********************************************************************************************************************/
 #ifndef Dio_CFG_H_
 #define Dio_CFG_H_
@@ -33,18 +33,18 @@
 #define DIO_CONFIG_SWITCH2_CHANNEL_ID        		(uint8_t)0x04
 
 /* DIO Configured Port's ID  */
-#define DIO_CONFIG_LED1_PORT                		(Dio_PortType)PORTF
-#define DIO_CONFIG_LED2_PORT                		(Dio_PortType)PORTF
-#define DIO_CONFIG_LED3_PORT                		(Dio_PortType)PORTF
-#define DIO_CONFIG_SWITCH1_PORT                 	(Dio_PortType)PORTF
-#define DIO_CONFIG_SWITCH2_PORT                 	(Dio_PortType)PORTF
+#define DIO_CONFIG_LED1_PORT                		(Dio_Port_t)PORTF
+#define DIO_CONFIG_LED2_PORT                		(Dio_Port_t)PORTF
+#define DIO_CONFIG_LED3_PORT                		(Dio_Port_t)PORTF
+#define DIO_CONFIG_SWITCH1_PORT                 	(Dio_Port_t)PORTF
+#define DIO_CONFIG_SWITCH2_PORT                 	(Dio_Port_t)PORTF
 
 /* DIO Configured Channel's ID */
-#define DIO_CONFIG_LED1_CHANNEL             		(Dio_PinType)PIN1
-#define DIO_CONFIG_LED2_CHANNEL             		(Dio_PinType)PIN2
-#define DIO_CONFIG_LED3_CHANNEL             		(Dio_PinType)PIN3
-#define DIO_CONFIG_SWITCH1_CHANNEL              	(Dio_PinType)PIN4
-#define DIO_CONFIG_SWITCH2_CHANNEL              	(Dio_PinType)PIN0
+#define DIO_CONFIG_LED1_CHANNEL             		(Dio_Pin_t)PIN1
+#define DIO_CONFIG_LED2_CHANNEL             		(Dio_Pin_t)PIN2
+#define DIO_CONFIG_LED3_CHANNEL             		(Dio_Pin_t)PIN3
+#define DIO_CONFIG_SWITCH1_CHANNEL              	(Dio_Pin_t)PIN4
+#define DIO_CONFIG_SWITCH2_CHANNEL              	(Dio_Pin_t)PIN0
 
 /**********************************************************************************************************************
  *  GLOBAL DATA PROTOTYPES
@@ -52,7 +52,7 @@
 /* Structure to gather the configured channels to be used and manipulated easily */
 typedef struct
 {
-	Dio_ChannelConfigType channels[NUM_CONFIGURED_CHANNELS];
+	Dio_ChannelConfig_t channels[NUM_CONFIGURED_CHANNELS];
 } Dio_ConfigType;
 
 /**********************************************************************************************************************
