@@ -142,22 +142,6 @@
         <Bp>
           <Number>0</Number>
           <Type>0</Type>
-          <LineNumber>62</LineNumber>
-          <EnabledFlag>1</EnabledFlag>
-          <Address>0</Address>
-          <ByteObject>0</ByteObject>
-          <HtxType>0</HtxType>
-          <ManyObjects>0</ManyObjects>
-          <SizeOfObject>0</SizeOfObject>
-          <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>0</BreakIfRCount>
-          <Filename>.\SERVICE\Input.c</Filename>
-          <ExecCommand></ExecCommand>
-          <Expression></Expression>
-        </Bp>
-        <Bp>
-          <Number>1</Number>
-          <Type>0</Type>
           <LineNumber>330</LineNumber>
           <EnabledFlag>1</EnabledFlag>
           <Address>3462</Address>
@@ -172,7 +156,7 @@
           <Expression>\\Blinking_led\MCAL/Gpt.c\330</Expression>
         </Bp>
         <Bp>
-          <Number>2</Number>
+          <Number>1</Number>
           <Type>0</Type>
           <LineNumber>32</LineNumber>
           <EnabledFlag>1</EnabledFlag>
@@ -188,7 +172,7 @@
           <Expression>\\Blinking_led\SERVICE/Blink.c\32</Expression>
         </Bp>
         <Bp>
-          <Number>3</Number>
+          <Number>2</Number>
           <Type>0</Type>
           <LineNumber>393</LineNumber>
           <EnabledFlag>1</EnabledFlag>
@@ -204,7 +188,7 @@
           <Expression>\\Blinking_led\MCAL/Gpt.c\393</Expression>
         </Bp>
         <Bp>
-          <Number>4</Number>
+          <Number>3</Number>
           <Type>0</Type>
           <LineNumber>26</LineNumber>
           <EnabledFlag>1</EnabledFlag>

@@ -20,7 +20,7 @@ int main(void)
 	 */
 	uint8_t offPeriod = get_pulse_timing(BUTTON_1, LED_2, BUTTON_2, LED_3, PULL_UP);
 	
-	for(;;)
+	while(1)
 	{
 		/* There will be a red blink forever with the entered ON and OFF Periods */
 		Blink_Start(BLINKING_GPTM, LED_1, 200, onPeriod, offPeriod);

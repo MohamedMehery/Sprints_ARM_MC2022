@@ -58,7 +58,7 @@ uint8_t get_pulse_timing(Service_DeviceChannel MasterDeviceChannel, Service_Devi
 	/* Revert all changes */
 	Led_TurnOff(MasterStatusChannel);
 	
-	for(;;)
+	while(1)
 	{
 		if (Button_GetState(MasterDeviceChannel, ButtonAttach) == BUTTON_PRESSED)
 		{
