@@ -45,46 +45,46 @@ Dio_LevelType Dio_ReadChannel(Dio_ChannelType ChannelId)
 				return DIO_LEVEL_HIGH;
 			else
 				return DIO_LEVEL_LOW;
-			break;	/* Unreachable */
+			break;	
 			
 		case PORTB:
 			if (GET_BIT(GPIO_PORTB_GPIODATA, configList.channels[ChannelId].pinId) == DIO_LEVEL_HIGH)
 				return DIO_LEVEL_HIGH;
 			else
 				return DIO_LEVEL_LOW;
-			break;	/* Unreachable */
+			break;	
 			
 		case PORTC:
 			if (GET_BIT(GPIO_PORTC_GPIODATA, configList.channels[ChannelId].pinId) == DIO_LEVEL_HIGH)
 				return DIO_LEVEL_HIGH;
 			else
 				return DIO_LEVEL_LOW;
-			break;	/* Unreachable */
+			break;	
 			
 		case PORTD:
 			if (GET_BIT(GPIO_PORTD_GPIODATA, configList.channels[ChannelId].pinId) == DIO_LEVEL_HIGH)
 				return DIO_LEVEL_HIGH;
 			else
 				return DIO_LEVEL_LOW;
-			break;	/* Unreachable */
+			break;	
 			
 		case PORTE:
 			if (GET_BIT(GPIO_PORTE_GPIODATA, configList.channels[ChannelId].pinId) == DIO_LEVEL_HIGH)
 				return DIO_LEVEL_HIGH;
 			else
 				return DIO_LEVEL_LOW;
-			break;	/* Unreachable */
+			break;	
 			
 		case PORTF:
 			if (GET_BIT(GPIO_PORTF_GPIODATA, configList.channels[ChannelId].pinId) == DIO_LEVEL_HIGH)
 				return DIO_LEVEL_HIGH;
 			else
 				return DIO_LEVEL_LOW;
-			break;	/* Unreachable */
+			break;	
 			
 		default:
 			return DIO_LEVEL_ERROR;
-			break; /* Unreachable */
+			break; 
 	}
 }
 
@@ -112,42 +112,42 @@ void Dio_WriteChannel(Dio_ChannelType ChannelId, Dio_LevelType Level)
 				SET_BIT(GPIO_PORTA_GPIODATA, configList.channels[ChannelId].pinId);
 			else
 				CLEAR_BIT(GPIO_PORTA_GPIODATA, configList.channels[ChannelId].pinId);
-			break;	/* Unreachable */
+			break;	
 			
 		case PORTB:
 			if (Level == DIO_LEVEL_HIGH)
 				SET_BIT(GPIO_PORTB_GPIODATA, configList.channels[ChannelId].pinId);
 			else
 				CLEAR_BIT(GPIO_PORTB_GPIODATA, configList.channels[ChannelId].pinId);
-			break;	/* Unreachable */
+			break;	
 			
 		case PORTC:
 			if (Level == DIO_LEVEL_HIGH)
 				SET_BIT(GPIO_PORTC_GPIODATA, configList.channels[ChannelId].pinId);
 			else
 				CLEAR_BIT(GPIO_PORTC_GPIODATA, configList.channels[ChannelId].pinId);
-			break;	/* Unreachable */
+			break;	
 			
 		case PORTD:
 			if (Level == DIO_LEVEL_HIGH)
 				SET_BIT(GPIO_PORTD_GPIODATA, configList.channels[ChannelId].pinId);
 			else
 				CLEAR_BIT(GPIO_PORTD_GPIODATA, configList.channels[ChannelId].pinId);
-			break;	/* Unreachable */
+			break;	
 			
 		case PORTE:
 			if (Level == DIO_LEVEL_HIGH)
 				SET_BIT(GPIO_PORTE_GPIODATA, configList.channels[ChannelId].pinId);
 			else
 				CLEAR_BIT(GPIO_PORTE_GPIODATA, configList.channels[ChannelId].pinId);
-			break;	/* Unreachable */
+			break;	
 			
 		case PORTF:
 			if (Level == DIO_LEVEL_HIGH)
 				SET_BIT(GPIO_PORTF_GPIODATA, configList.channels[ChannelId].pinId);
 			else
 				CLEAR_BIT(GPIO_PORTF_GPIODATA, configList.channels[ChannelId].pinId);
-			break;	/* Unreachable */
+			break;	
 	}
 }
 
@@ -181,7 +181,7 @@ Dio_LevelType Dio_FlipChannel(Dio_ChannelType ChannelId)
 				SET_BIT(GPIO_PORTA_GPIODATA, configList.channels[ChannelId].pinId);
 				return DIO_LEVEL_HIGH;
 			}
-			break;	/* Unreachable */
+			break;	
 			
 		case PORTB:
 			if (GET_BIT(GPIO_PORTB_GPIODATA, configList.channels[ChannelId].pinId) == DIO_LEVEL_HIGH)
@@ -194,7 +194,7 @@ Dio_LevelType Dio_FlipChannel(Dio_ChannelType ChannelId)
 				SET_BIT(GPIO_PORTB_GPIODATA, configList.channels[ChannelId].pinId);
 				return DIO_LEVEL_HIGH;
 			}
-			break;	/* Unreachable */
+			break;	
 			
 		case PORTC:
 			if (GET_BIT(GPIO_PORTC_GPIODATA, configList.channels[ChannelId].pinId) == DIO_LEVEL_HIGH)
@@ -207,7 +207,7 @@ Dio_LevelType Dio_FlipChannel(Dio_ChannelType ChannelId)
 				SET_BIT(GPIO_PORTC_GPIODATA, configList.channels[ChannelId].pinId);
 				return DIO_LEVEL_HIGH;
 			}
-			break;	/* Unreachable */
+			break;	
 			
 		case PORTD:
 			if (GET_BIT(GPIO_PORTD_GPIODATA, configList.channels[ChannelId].pinId) == DIO_LEVEL_HIGH)
@@ -220,7 +220,7 @@ Dio_LevelType Dio_FlipChannel(Dio_ChannelType ChannelId)
 				SET_BIT(GPIO_PORTD_GPIODATA, configList.channels[ChannelId].pinId);
 				return DIO_LEVEL_HIGH;
 			}
-			break;	/* Unreachable */
+			break;	
 			
 		case PORTE:
 			if (GET_BIT(GPIO_PORTE_GPIODATA, configList.channels[ChannelId].pinId) == DIO_LEVEL_HIGH)
@@ -233,7 +233,7 @@ Dio_LevelType Dio_FlipChannel(Dio_ChannelType ChannelId)
 				SET_BIT(GPIO_PORTE_GPIODATA, configList.channels[ChannelId].pinId);
 				return DIO_LEVEL_HIGH;
 			}
-			break;	/* Unreachable */
+			break;	
 			
 		case PORTF:
 			if (GET_BIT(GPIO_PORTF_GPIODATA, configList.channels[ChannelId].pinId) == DIO_LEVEL_HIGH)
@@ -246,7 +246,7 @@ Dio_LevelType Dio_FlipChannel(Dio_ChannelType ChannelId)
 				SET_BIT(GPIO_PORTF_GPIODATA, configList.channels[ChannelId].pinId);
 				return DIO_LEVEL_HIGH;
 			}
-			break;	/* Unreachable */
+			break;	
 	}
 }
 
@@ -267,27 +267,27 @@ Dio_PortLevelType Dio_ReadPort(Dio_PortType PortId)
 	{
 		case PORTA:
 			return (Dio_PortLevelType)GPIO_PORTA_GPIODATA;
-			break;	/* Unreachable */
+			break;	
 			
 		case PORTB:
 			return (Dio_PortLevelType)GPIO_PORTB_GPIODATA;
-			break;	/* Unreachable */
+			break;	
 			
 		case PORTC:
 			return (Dio_PortLevelType)GPIO_PORTC_GPIODATA;
-			break;	/* Unreachable */
+			break;	
 			
 		case PORTD:
 			return (Dio_PortLevelType)GPIO_PORTD_GPIODATA;
-			break;	/* Unreachable */
+			break;	
 			
 		case PORTE:
 			return (Dio_PortLevelType)GPIO_PORTE_GPIODATA;
-			break;	/* Unreachable */
+			break;	
 			
 		case PORTF:
 			return (Dio_PortLevelType)GPIO_PORTF_GPIODATA;
-			break;	/* Unreachable */
+			break;	
 	}
 }
 
@@ -308,27 +308,27 @@ void Dio_WritePort(Dio_PortType PortId, Dio_PortLevelType Level)
 	{
 		case PORTA:
 			GPIO_PORTA_GPIODATA = Level;
-			break;	/* Unreachable */
+			break;	
 			
 		case PORTB:
 			GPIO_PORTB_GPIODATA = Level;
-			break;	/* Unreachable */
+			break;	
 			
 		case PORTC:
 			GPIO_PORTC_GPIODATA = Level;
-			break;	/* Unreachable */
+			break;	
 			
 		case PORTD:
 			GPIO_PORTD_GPIODATA = Level;
-			break;	/* Unreachable */
+			break;	
 			
 		case PORTE:
 			GPIO_PORTE_GPIODATA = Level;
-			break;	/* Unreachable */
+			break;	
 			
 		case PORTF:
 			GPIO_PORTF_GPIODATA = Level;
-			break;	/* Unreachable */
+			break;	
 	}
 }
 
