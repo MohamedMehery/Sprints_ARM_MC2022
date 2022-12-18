@@ -23,7 +23,7 @@
 /**********************************************************************************************************************
 *  GLOBAL DATA PROTOTYPES
 *********************************************************************************************************************/
-typedef Led_LedChannelType Service_DeviceChannel; /* Can be used as Button_ButtonChannel_t too */
+typedef Led_LedChannelType Service_Device_Channel; /* Can be used as Button_ButtonChannel_t too */
 
 typedef uint16_t Service_TimeType;
 
@@ -31,7 +31,7 @@ typedef uint8_t Service_HighPeriodType;
 
 typedef uint8_t Service_LowPeriod_t;
 
-typedef Gpt_ChannelType Service_TimerChannel_t;
+typedef Gpt_Channel_t Service_TimerChannel_t;
  
  
 #endif /* SERVICE_TYPES_H_ */

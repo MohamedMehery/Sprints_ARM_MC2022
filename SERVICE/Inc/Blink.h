@@ -34,7 +34,7 @@
 * Return value: void
 * Description: Function to initialize and start blinking service
 *******************************************************************************/
-void Blink_Start(Service_TimerChannel_t TimerChannle, Service_DeviceChannel DeviceChannel, Service_TimeType Time, Service_HighPeriodType HighPeriod, Service_LowPeriod_t LowPeriod);
+void Blink_Start(Service_TimerChannel_t TimerChannle, Service_Device_Channel DeviceChannel, Service_TimeType Time, Service_HighPeriodType HighPeriod, Service_LowPeriod_t LowPeriod);
  
 /*******************************************************************************
 * Service Name: Blink_Stop
@@ -47,7 +47,7 @@ void Blink_Start(Service_TimerChannel_t TimerChannle, Service_DeviceChannel Devi
 * Return value: void
 * Description: Function to stop blinking
 *******************************************************************************/
-void Blink_Stop(Service_DeviceChannel DeviceChannel);
+void Blink_Stop(Service_Device_Channel DeviceChannel);
  
 #endif /* LED_H_ */
 /**********************************************************************************************************************

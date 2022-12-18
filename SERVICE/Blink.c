@@ -20,7 +20,7 @@
  *  STATIC GLOBAL DATA
  *********************************************************************************************************************/
 static Service_TimerChannel_t timerChannle;
-static Service_DeviceChannel deviceChannel;
+static Service_Device_Channel deviceChannel;
 static uint8_t flag = 0;
 
 /**********************************************************************************************************************
@@ -50,7 +50,7 @@ void Blinking_CallBack(void)
 * Return value: void
 * Description: Function to initialize and start blinking service
 *******************************************************************************/
-void Blink_Start(Service_TimerChannel_t TimerChannle, Service_DeviceChannel DeviceChannel, Service_TimeType Time, Service_HighPeriodType HighPeriod, Service_LowPeriod_t LowPeriod)
+void Blink_Start(Service_TimerChannel_t TimerChannle, Service_Device_Channel DeviceChannel, Service_TimeType Time, Service_HighPeriodType HighPeriod, Service_LowPeriod_t LowPeriod)
 {
 	/* Led Initialization */
 	Led_Init();
@@ -116,7 +116,7 @@ void Blink_Start(Service_TimerChannel_t TimerChannle, Service_DeviceChannel Devi
 * Return value: void
 * Description: Function to stop blinking
 *******************************************************************************/
-void Blink_Stop(Service_DeviceChannel DeviceChannel)
+void Blink_Stop(Service_Device_Channel DeviceChannel)
 {
 	/* Stop the assosiated */
 	Gpt_StopTimer(timerChannle);

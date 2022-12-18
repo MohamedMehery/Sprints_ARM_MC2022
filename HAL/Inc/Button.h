@@ -22,7 +22,7 @@
 *  GLOBAL DATA PROTOTYPES
 *********************************************************************************************************************/
 typedef Dio_Channel_t Button_ButtonChannel_t;
-typedef Port_PinInternalAttachType Button_ButtonAttachType;
+typedef Port_PinInternalAttachType Button_ButtonAttach_t;
 
 typedef enum
 {
@@ -58,7 +58,7 @@ void Button_Init(void);
 * Return value: Button_State
 * Description: Function to get the state of the Button using Dio MCAL
 *******************************************************************************/
-Button_State Button_GetState(Button_ButtonChannel_t ButtonChannel, Button_ButtonAttachType ButtonAttach);
+Button_State Button_GetState(Button_ButtonChannel_t ButtonChannel, Button_ButtonAttach_t ButtonAttach);
 
  #endif /* BUTTON_H_ */
  /**********************************************************************************************************************
