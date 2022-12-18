@@ -37,7 +37,7 @@
 *              - Set the operation mode of GPT to ONESHOT or CONTINOUS Mode
 *              - Start all the enabled GPT Predefined timers at value = 0
 *******************************************************************************/
-void Gpt_Init(const Gpt_ChannelConfigType* ConfigPtr)
+void Gpt_Init(const Gpt_Channel_Config_t* ConfigPtr)
 {
 	if (ConfigPtr->isEnabled == DISABLED)
 		return;
@@ -165,7 +165,7 @@ void Gpt_Init(const Gpt_ChannelConfigType* ConfigPtr)
 *******************************************************************************/
 void Gpt_DisableNotification(Gpt_ChannelType ChannelId)
 {
-	const Gpt_ChannelConfigType* ConfigPtr = &(GPT_Config.channels[ChannelId]);
+	const Gpt_Channel_Config_t* ConfigPtr = &(GPT_Config.channels[ChannelId]);
 	
 	volatile uint8_t* channelPtr = NULL_PTR;
 	volatile Gpt_TimerInterruptType interruptId = 0;
@@ -246,7 +246,7 @@ void Gpt_DisableNotification(Gpt_ChannelType ChannelId)
 *******************************************************************************/
 void Gpt_EnableNotification(Gpt_ChannelType ChannelId)
 {
-	const Gpt_ChannelConfigType* ConfigPtr = &(GPT_Config.channels[ChannelId]);
+	const Gpt_Channel_Config_t* ConfigPtr = &(GPT_Config.channels[ChannelId]);
 	
 	volatile uint8_t* channelPtr = NULL_PTR;
 	volatile Gpt_TimerInterruptType interruptId = 0;
@@ -327,7 +327,7 @@ void Gpt_EnableNotification(Gpt_ChannelType ChannelId)
 *******************************************************************************/
 void Gpt_StartTimer(Gpt_ChannelType ChannelId, Gpt_ValueType Value)
 {
-	const Gpt_ChannelConfigType* ConfigPtr = &(GPT_Config.channels[ChannelId]);
+	const Gpt_Channel_Config_t* ConfigPtr = &(GPT_Config.channels[ChannelId]);
 	
 	volatile uint8_t* channelPtr = NULL_PTR;
 	volatile uint8_t timerWidth = 0;
@@ -436,7 +436,7 @@ void Gpt_StartTimer(Gpt_ChannelType ChannelId, Gpt_ValueType Value)
 *******************************************************************************/
 void Gpt_StopTimer(Gpt_ChannelType ChannelId)
 {
-	const Gpt_ChannelConfigType* ConfigPtr = &(GPT_Config.channels[ChannelId]);
+	const Gpt_Channel_Config_t* ConfigPtr = &(GPT_Config.channels[ChannelId]);
 	
 	volatile uint8_t* channelPtr = NULL_PTR;
 	volatile uint8_t timerWidth = 0;
@@ -502,7 +502,7 @@ void Gpt_StopTimer(Gpt_ChannelType ChannelId)
 *******************************************************************************/
 Gpt_ValueType Gpt_GetTimeElapsed(Gpt_ChannelType ChannelId)
 {
-	const Gpt_ChannelConfigType* ConfigPtr = &(GPT_Config.channels[ChannelId]);
+	const Gpt_Channel_Config_t* ConfigPtr = &(GPT_Config.channels[ChannelId]);
 	
 	volatile uint8_t* channelPtr = NULL_PTR;
 	volatile uint8_t timerWidth = 0;
@@ -596,7 +596,7 @@ Gpt_ValueType Gpt_GetTimeElapsed(Gpt_ChannelType ChannelId)
 *******************************************************************************/
 Gpt_ValueType Gpt_GetTimeRemaining(Gpt_ChannelType ChannelId)
 {
-	const Gpt_ChannelConfigType* ConfigPtr = &(GPT_Config.channels[ChannelId]);
+	const Gpt_Channel_Config_t* ConfigPtr = &(GPT_Config.channels[ChannelId]);
 	
 	volatile uint8_t* channelPtr = NULL_PTR;
 	volatile uint8_t timerWidth = 0;

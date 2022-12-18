@@ -111,7 +111,7 @@ typedef struct
 	Gpt_ChannelModeType mode;
 	Gpt_NotificationType notification;
 	Gpt_NotificationPriority priority;
-} Gpt_ChannelConfigType;
+} Gpt_Channel_Config_t;
 */
 
 typedef struct
@@ -124,7 +124,7 @@ typedef struct
 	Gpt_ChannelModeType mode;
 	Gpt_NotificationType notification;
 	Gpt_NotificationPriority priority;
-} Gpt_ChannelConfigType;
+} Gpt_Channel_Config_t;
 
 /* A type for the predefined timers */
 typedef uint8_t Gpt_PredefTimerType;
@@ -132,7 +132,7 @@ typedef uint8_t Gpt_PredefTimerType;
 /* Gpt config structure for an array of 12 timers */
 typedef struct
 {
-	Gpt_ChannelConfigType channels[TOTAL_NUM_TIMERS];
+	Gpt_Channel_Config_t channels[TOTAL_NUM_TIMERS];
 } GPT_ConfigType;
 
 #endif  /* GPT_TYPES_H_ */

@@ -38,7 +38,7 @@
 *              - Set the operation mode of GPT to ONESHOT or CONTINOUS Mode
 *              - Start all the enabled GPT Predefined timers at value = 0
 *******************************************************************************/
-void Gpt_Init(const Gpt_ChannelConfigType* ConfigPtr);
+void Gpt_Init(const Gpt_Channel_Config_t* ConfigPtr);
 
 /*******************************************************************************
 * Service Name: Gpt_DisableNotification
