@@ -66,7 +66,7 @@ uint8_t get_pulse_timing(Service_DeviceChannel MasterDeviceChannel, Service_Devi
 			Led_TurnOn(MasterStatusChannel);
 			
 			/* wait a little bit */
-			for(int i = 0; i < 1000000; i++);
+			for(int i = 0; i < LOOP_DELAY; i++);
 			
 			/* Revert all changes */
 			Led_TurnOff(MasterStatusChannel);
@@ -79,7 +79,7 @@ uint8_t get_pulse_timing(Service_DeviceChannel MasterDeviceChannel, Service_Devi
 			Led_TurnOn(SlaveStatusChannel);
 			
 			/* wait a little bit */
-			for(int i = 0; i < 1000000; i++);
+			for(int i = 0; i < LOOP_DELAY; i++);
 			
 			/* Revert all changes */
 			Led_TurnOff(SlaveStatusChannel);
@@ -90,7 +90,7 @@ uint8_t get_pulse_timing(Service_DeviceChannel MasterDeviceChannel, Service_Devi
 	}
 	
 	/* wait a little bit */
-	for(int i = 0; i < 1000000; i++);
+	for(int i = 0; i < LOOP_DELAY; i++);
 	
 	/* Pass the number of pulses */
 	return pulses;

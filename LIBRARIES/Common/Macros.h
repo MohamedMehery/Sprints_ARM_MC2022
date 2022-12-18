@@ -55,6 +55,9 @@
 /* To convert milliseconds into microseconds */
 #define MSECONDS(time)	(time*1000)
 
+/* LOOP Delay*/
+#define LOOP_DELAY 1000000
+
 #endif  /* Macros_H_ */
 
 /**********************************************************************************************************************
