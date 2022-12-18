@@ -22,8 +22,8 @@
 /**********************************************************************************************************************
  *  GLOBAL DATA PROTOTYPES
  *********************************************************************************************************************/
-/* Type definition for Dio_ChannelType used by the DIO APIs */
-typedef uint8_t Dio_ChannelType;
+/* Type definition for Dio_Channel_t used by the DIO APIs */
+typedef uint8_t Dio_Channel_t;
 
 /* Type definition for Dio_PinType used by the DIO APIs */
 typedef Port_PinType Dio_PinType;

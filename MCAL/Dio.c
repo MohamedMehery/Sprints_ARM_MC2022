@@ -26,13 +26,13 @@
 * Service ID[hex]: 0x00
 * Sync/Async: Synchronous
 * Reentrancy: Reentrant
-* Parameters (in): ChannelId - Dio_ChannelType
+* Parameters (in): ChannelId - Dio_Channel_t
 * Parameters (inout): None
 * Parameters (out): None
 * Return value: Dio_LevelType
 * Description: Function for DIO read Channel API
 *******************************************************************************/
-Dio_LevelType Dio_ReadChannel(Dio_ChannelType ChannelId)
+Dio_LevelType Dio_ReadChannel(Dio_Channel_t ChannelId)
 {
 	/* Index Error */
 	if (ChannelId >= NUM_CONFIGURED_CHANNELS)
@@ -93,13 +93,13 @@ Dio_LevelType Dio_ReadChannel(Dio_ChannelType ChannelId)
 * Service ID[hex]: 0x00
 * Sync/Async: Synchronous
 * Reentrancy: Reentrant
-* Parameters (in): ChannelId - Dio_ChannelType, Level - Dio_LevelType
+* Parameters (in): ChannelId - Dio_Channel_t, Level - Dio_LevelType
 * Parameters (inout): None
 * Parameters (out): None
 * Return value: None
 * Description: Function for DIO write Channel API
 *******************************************************************************/
-void Dio_WriteChannel(Dio_ChannelType ChannelId, Dio_LevelType Level)
+void Dio_WriteChannel(Dio_Channel_t ChannelId, Dio_LevelType Level)
 {
 	/* Index Error */
 	if (ChannelId >= NUM_CONFIGURED_CHANNELS)
@@ -156,13 +156,13 @@ void Dio_WriteChannel(Dio_ChannelType ChannelId, Dio_LevelType Level)
 * Service ID[hex]: 0x00
 * Sync/Async: Synchronous
 * Reentrancy: Reentrant
-* Parameters (in): ChannelId - Dio_ChannelType
+* Parameters (in): ChannelId - Dio_Channel_t
 * Parameters (inout): None
 * Parameters (out): None
 * Return value: Dio_LevelType
 * Description: Function for DIO flip Channel, then read Channel API
 *******************************************************************************/
-Dio_LevelType Dio_FlipChannel(Dio_ChannelType ChannelId)
+Dio_LevelType Dio_FlipChannel(Dio_Channel_t ChannelId)
 {
 	/* Index Error */
 	if (ChannelId >= NUM_CONFIGURED_CHANNELS)

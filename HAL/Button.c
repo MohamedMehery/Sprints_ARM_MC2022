@@ -46,7 +46,7 @@ void Button_Init(void)
 * Return value: Button_State
 * Description: Function to get the state of the Button using Dio MCAL
 *******************************************************************************/
-Button_State Button_GetState(Button_ButtonChannelType ButtonChannel, Button_ButtonAttachType ButtonAttach)
+Button_State Button_GetState(Button_ButtonChannel_t ButtonChannel, Button_ButtonAttachType ButtonAttach)
 {
 	Dio_LevelType testLevel = DIO_LEVEL_LOW;
 	
