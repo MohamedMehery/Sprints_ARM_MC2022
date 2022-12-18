@@ -21,7 +21,7 @@
  *  GLOBAL FUNCTIONS PROTOTYPES
  *********************************************************************************************************************/
 /*******************************************************************************
-* Service Name: Input_GetNumOfPresses
+* Service Name: get_pulse_timing
 * Service ID[hex]: 0x00
 * Sync/Async: Synchronous
 * Reentrancy: Non-Reentrant
@@ -35,7 +35,7 @@
 * Return value: void
 * Description: Function to initialize the connected devices and get the number of pulses as input
 *******************************************************************************/
-uint8_t Input_GetNumOfPresses(Service_DeviceChannel MasterDeviceChannel, Service_DeviceChannel MasterStatusChannel,\
+uint8_t get_pulse_timing(Service_DeviceChannel MasterDeviceChannel, Service_DeviceChannel MasterStatusChannel,\
 							Service_DeviceChannel SlaveDeviceChannel, Service_DeviceChannel SlaveStatusChannel,\
 							Button_ButtonAttachType ButtonAttach);
  
