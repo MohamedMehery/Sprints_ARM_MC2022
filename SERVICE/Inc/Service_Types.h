@@ -31,7 +31,7 @@ typedef uint8_t Service_HighPeriodType;
 
 typedef uint8_t Service_LowPeriod_t;
 
-typedef Gpt_Channel_t Service_TimerChannel_t;
+typedef Gpt_ChannelType Service_TimerChannel_t;
  
  
 #endif /* SERVICE_TYPES_H_ */

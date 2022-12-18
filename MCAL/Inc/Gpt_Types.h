@@ -43,7 +43,7 @@ typedef enum
 	TIMER3_32BIT = 9,
 	TIMER4_32BIT = 10,
 	TIMER5_32BIT = 11
-} Gpt_Channel_t;
+} Gpt_ChannelType;
 
 /* enum for the half type */
 typedef IntCtrl_InterruptType Gpt_TimerInterruptType;
@@ -99,7 +99,7 @@ typedef uint8_t Gpt_NotificationPriority;
 /*
 typedef struct
 {
-	Gpt_Channel_t channelId;
+	Gpt_ChannelType channelId;
 	Gpt_EnableType	enable;
 	Gpt_ChannelSizeType size;
 	Gpt_TimerType half;
@@ -116,7 +116,7 @@ typedef struct
 
 typedef struct
 {
-	Gpt_Channel_t channelId;
+	Gpt_ChannelType channelId;
 	Gpt_EnableType isEnabled;
 	Gpt_DirectionType direction;
 	Gpt_ChannelTickFrequencyType frequency;

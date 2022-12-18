@@ -157,13 +157,13 @@ void Gpt_Init(const Gpt_Channel_Config_t* ConfigPtr)
 * Service ID[hex]: 0x01
 * Sync/Async: Synchronous
 * Reentrancy: Reentrant
-* Parameters (in): ChannelId - Pointer to Gpt_Channel_t data
+* Parameters (in): ChannelId - Pointer to Gpt_ChannelType data
 * Parameters (inout): None
 * Parameters (out): None
 * Return value: None
 * Description: Function to disable the notification when the dedicated timer hits the target
 *******************************************************************************/
-void Gpt_DisableNotification(Gpt_Channel_t ChannelId)
+void Gpt_DisableNotification(Gpt_ChannelType ChannelId)
 {
 	const Gpt_Channel_Config_t* ConfigPtr = &(GPT_Config.channels[ChannelId]);
 	
@@ -238,13 +238,13 @@ void Gpt_DisableNotification(Gpt_Channel_t ChannelId)
 * Service ID[hex]: 0x02
 * Sync/Async: Synchronous
 * Reentrancy: Reentrant
-* Parameters (in): ChannelId - Pointer to Gpt_Channel_t data
+* Parameters (in): ChannelId - Pointer to Gpt_ChannelType data
 * Parameters (inout): None
 * Parameters (out): None
 * Return value: None
 * Description: Function to enable the notification when the dedicated timer hits the target
 *******************************************************************************/
-void Gpt_EnableNotification(Gpt_Channel_t ChannelId)
+void Gpt_EnableNotification(Gpt_ChannelType ChannelId)
 {
 	const Gpt_Channel_Config_t* ConfigPtr = &(GPT_Config.channels[ChannelId]);
 	
@@ -319,13 +319,13 @@ void Gpt_EnableNotification(Gpt_Channel_t ChannelId)
 * Service ID[hex]: 0x03
 * Sync/Async: Synchronous
 * Reentrancy: Reentrant
-* Parameters (in): ChannelId - Pointer to Gpt_Channel_t data, Value - the timer value in microseconds
+* Parameters (in): ChannelId - Pointer to Gpt_ChannelType data, Value - the timer value in microseconds
 * Parameters (inout): None
 * Parameters (out): None
 * Return value: None
 * Description: Function to make the dedicated timer start counting
 *******************************************************************************/
-void Gpt_StartTimer(Gpt_Channel_t ChannelId, Gpt_ValueType Value)
+void Gpt_StartTimer(Gpt_ChannelType ChannelId, Gpt_ValueType Value)
 {
 	const Gpt_Channel_Config_t* ConfigPtr = &(GPT_Config.channels[ChannelId]);
 	
@@ -428,13 +428,13 @@ void Gpt_StartTimer(Gpt_Channel_t ChannelId, Gpt_ValueType Value)
 * Service ID[hex]: 0x04
 * Sync/Async: Synchronous
 * Reentrancy: Reentrant
-* Parameters (in): ChannelId - Pointer to Gpt_Channel_t data
+* Parameters (in): ChannelId - Pointer to Gpt_ChannelType data
 * Parameters (inout): None
 * Parameters (out): None
 * Return value: None
 * Description: Function to make the dedicated timer stop counting
 *******************************************************************************/
-void Gpt_StopTimer(Gpt_Channel_t ChannelId)
+void Gpt_StopTimer(Gpt_ChannelType ChannelId)
 {
 	const Gpt_Channel_Config_t* ConfigPtr = &(GPT_Config.channels[ChannelId]);
 	
@@ -494,13 +494,13 @@ void Gpt_StopTimer(Gpt_Channel_t ChannelId)
 * Service ID[hex]: 0x05
 * Sync/Async: Synchronous
 * Reentrancy: Reentrant
-* Parameters (in): ChannelId - Pointer to Gpt_Channel_t data
+* Parameters (in): ChannelId - Pointer to Gpt_ChannelType data
 * Parameters (inout): None
 * Parameters (out): None
 * Return value: Gpt_ValueType
 * Description: Function to get the counted time until the call's moment
 *******************************************************************************/
-Gpt_ValueType Gpt_GetTimeElapsed(Gpt_Channel_t ChannelId)
+Gpt_ValueType Gpt_GetTimeElapsed(Gpt_ChannelType ChannelId)
 {
 	const Gpt_Channel_Config_t* ConfigPtr = &(GPT_Config.channels[ChannelId]);
 	
@@ -588,13 +588,13 @@ Gpt_ValueType Gpt_GetTimeElapsed(Gpt_Channel_t ChannelId)
 * Service ID[hex]: 0x06
 * Sync/Async: Synchronous
 * Reentrancy: Reentrant
-* Parameters (in): ChannelId - Pointer to Gpt_Channel_t data
+* Parameters (in): ChannelId - Pointer to Gpt_ChannelType data
 * Parameters (inout): None
 * Parameters (out): None
 * Return value: Gpt_ValueType
 * Description: Function to get the remaining time to hit the target from the calling's moment
 *******************************************************************************/
-Gpt_ValueType Gpt_GetTimeRemaining(Gpt_Channel_t ChannelId)
+Gpt_ValueType Gpt_GetTimeRemaining(Gpt_ChannelType ChannelId)
 {
 	const Gpt_Channel_Config_t* ConfigPtr = &(GPT_Config.channels[ChannelId]);
 	
