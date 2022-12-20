@@ -93,7 +93,7 @@ void Gpt_StartTimer(Gpt_Channel_t ChannelId, Gpt_ValueType Value);
 void Gpt_StopTimer(Gpt_Channel_t ChannelId);
 
 /*******************************************************************************
-* Service Name: Gpt_GetTimeElapsed
+* Service Name: Gpt_GetTimepassed_
 * Service ID[hex]: 0x05
 * Sync/Async: Synchronous
 * Reentrancy: Reentrant
@@ -103,7 +103,7 @@ void Gpt_StopTimer(Gpt_Channel_t ChannelId);
 * Return value: Gpt_ValueType
 * Description: Function to get the counted time until the call's moment
 *******************************************************************************/
-Gpt_ValueType Gpt_GetTimeElapsed(Gpt_Channel_t ChannelId);
+Gpt_ValueType Gpt_GetTimepassed_(Gpt_Channel_t ChannelId);
 
 /*******************************************************************************
 * Service Name: Gpt_GetTimeRemaining
@@ -118,19 +118,7 @@ Gpt_ValueType Gpt_GetTimeElapsed(Gpt_Channel_t ChannelId);
 *******************************************************************************/
 Gpt_ValueType Gpt_GetTimeRemaining(Gpt_Channel_t ChannelId);
 
-/*******************************************************************************
-* Service Name: Gpt_GetPredefTimerValue
-* Service ID[hex]: 0x07
-* Sync/Async: Synchronous
-* Reentrancy: Reentrant
-* Parameters (in): ConfigPtr - Pointer to post-build (Linking) configuration data
-* Parameters (inout): None
-* Parameters (out): None
-* Return value: None
-* Description: Function to return the current value of GPT PredefTimer passed
-*******************************************************************************/
-Std_ReturnType Gpt_GetPredefTimerValue(Gpt_PredefTimerType PredefTimer, uint32* TimeValuePtr);
- 
+
 #endif  /* Gpt_H_ */
 
 /**********************************************************************************************************************

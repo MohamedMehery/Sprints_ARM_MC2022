@@ -489,7 +489,7 @@ void Gpt_StopTimer(Gpt_Channel_t ChannelId)
 }
 
 /*******************************************************************************
-* Service Name: Gpt_GetTimeElapsed
+* Service Name: Gpt_GetTimepassed_
 * Service ID[hex]: 0x05
 * Sync/Async: Synchronous
 * Reentrancy: Reentrant
@@ -499,7 +499,7 @@ void Gpt_StopTimer(Gpt_Channel_t ChannelId)
 * Return value: Gpt_ValueType
 * Description: Function to get the counted time until the call's moment
 *******************************************************************************/
-Gpt_ValueType Gpt_GetTimeElapsed(Gpt_Channel_t ChannelId)
+Gpt_ValueType Gpt_GetTimepassed_(Gpt_Channel_t ChannelId)
 {
 	const Gpt_Channel_Config_t* ConfigPtr = &(GPT_Config.channels[ChannelId]);
 	
@@ -564,18 +564,18 @@ Gpt_ValueType Gpt_GetTimeElapsed(Gpt_Channel_t ChannelId)
 	
 	if (timerWidth == 32)
 	{
-		uint32 elapsedTime = GPT_GPTMTAV(channelPtr);
-		elapsedTime = elapsedTime / F_CPU;		/* elapsedTime = elapsedTime / 16 */
+		uint32 passed_Time = GPT_GPTMTAV(channelPtr);
+		passed_Time = passed_Time / F_CPU;		/* passed_Time = passed_Time / 16 */
 		
-		return elapsedTime;
+		return passed_Time;
 	}
 	else if (timerWidth == 64)
 	{
-		uint64_t elapsedTime = ((uint64_t)GPT_GPTMTBV(channelPtr) & (0x00000000FFFFFFFF))<<32;
-		elapsedTime |= GPT_GPTMTAV(channelPtr) & (0x00000000FFFFFFFF);
-		elapsedTime = elapsedTime / F_CPU;		/* elapsedTime = elapsedTime / 16 */
+		uint64_t passed_Time = ((uint64_t)GPT_GPTMTBV(channelPtr) & (0x00000000FFFFFFFF))<<32;
+		passed_Time |= GPT_GPTMTAV(channelPtr) & (0x00000000FFFFFFFF);
+		passed_Time = passed_Time / F_CPU;		/* passed_Time = passed_Time / 16 */
 		
-		return elapsedTime;
+		return passed_Time;
 	}
 	
 	/* [TODO] Find another efficient way to indicate an error */
@@ -658,25 +658,25 @@ Gpt_ValueType Gpt_GetTimeRemaining(Gpt_Channel_t ChannelId)
 	
 	if (timerWidth == 32)
 	{
-		uint32 elapsedTime = GPT_GPTMTAV(channelPtr);
-		elapsedTime = elapsedTime / F_CPU;		/* elapsedTime = elapsedTime / 16 */
+		uint32 passed_Time = GPT_GPTMTAV(channelPtr);
+		passed_Time = passed_Time / F_CPU;		/* passed_Time = passed_Time / 16 */
 		
-		uint32 targetingTime = GPT_GPTMTAILR(channelPtr);
+		uint32 ovf_time_cnt = GPT_GPTMTAILR(channelPtr);
 		
-		uint32 remainingTime = targetingTime - elapsedTime;
+		uint32 remainingTime = ovf_time_cnt - passed_Time;
 		
 		return remainingTime;
 	}
 	else if (timerWidth == 64)
 	{
-		uint64_t elapsedTime = ((uint64_t)GPT_GPTMTBV(channelPtr) & (0x00000000FFFFFFFF))<<32;
-		elapsedTime |= GPT_GPTMTAV(channelPtr) & (0x00000000FFFFFFFF);
-		elapsedTime = elapsedTime / F_CPU;		/* elapsedTime = elapsedTime / 16 */
+		uint64_t passed_Time = ((uint64_t)GPT_GPTMTBV(channelPtr) & (0x00000000FFFFFFFF))<<32;
+		passed_Time |= GPT_GPTMTAV(channelPtr) & (0x00000000FFFFFFFF);
+		passed_Time = passed_Time / F_CPU;		/* passed_Time = passed_Time / 16 */
 		
-		uint64_t targetingTime = ((uint64_t)GPT_GPTMTBILR(channelPtr) & (0x00000000FFFFFFFF))<<32;
-		targetingTime |= GPT_GPTMTAILR(channelPtr) & (0x00000000FFFFFFFF);
+		uint64_t ovf_time_cnt = ((uint64_t)GPT_GPTMTBILR(channelPtr) & (0x00000000FFFFFFFF))<<32;
+		ovf_time_cnt |= GPT_GPTMTAILR(channelPtr) & (0x00000000FFFFFFFF);
 		
-		uint64_t remainingTime = targetingTime - elapsedTime;
+		uint64_t remainingTime = ovf_time_cnt - passed_Time;
 		
 		return remainingTime;
 	}
@@ -685,21 +685,7 @@ Gpt_ValueType Gpt_GetTimeRemaining(Gpt_Channel_t ChannelId)
 	return 0;
 }
 
-/*******************************************************************************
-* Service Name: [TODO] Gpt_GetPredefTimerValue
-* Service ID[hex]: 0x07
-* Sync/Async: Synchronous
-* Reentrancy: Reentrant
-* Parameters (in): ConfigPtr - Pointer to post-build (Linking) configuration data
-* Parameters (inout): None
-* Parameters (out): None
-* Return value: None
-* Description: Function to return the current value of GPT PredefTimer passed
-*******************************************************************************/
-Std_ReturnType Gpt_GetPredefTimerValue(Gpt_PredefTimerType PredefTimer, uint32* TimeValuePtr)
-{
-	return 0;
-}
+
 /**********************************************************************************************************************
  *  END OF FILE: Gpt.c
  *********************************************************************************************************************/
