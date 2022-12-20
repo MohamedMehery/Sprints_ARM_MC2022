@@ -42,7 +42,6 @@ void Gpt_Init(const Gpt_Channel_Config_t* ConfigPtr)
 	if (ConfigPtr->isEnabled == DISABLED)
 		return;
 	
-	/* Should disable all the interrupts until finishing the configurations initializations */
 	INTERRUPTS_DISABLE
 	
 	volatile uint8_t* channelPtr = NULL_PTR;
@@ -122,7 +121,6 @@ void Gpt_Init(const Gpt_Channel_Config_t* ConfigPtr)
 	GPT_GPTMCTL(channelPtr).TAEN = 0;
 
 	/* Choose 16bit or full 32bit timer for 16/32bit timers, and 32bit or 64bit for 32/64bit timers */
-	/* [TODO] Make it generic for half or full mode */
 	GPT_GPTMCFG(channelPtr) = 0x00000000;
 	
 	/* Enable match interrupt */
