@@ -112,7 +112,6 @@ void Gpt_Init(const Gpt_Channel_Config_t* ConfigPtr)
 			SYSCTL_RCGCWTIMER.R5 = 1;
 			break;
 		default:
-			/* [TODO] Report an error, then return */
 			return;
 	}
 	
@@ -222,7 +221,7 @@ void Gpt_DisableNotification(Gpt_Channel_t ChannelId)
 			interruptId = TIMER_32_64_BIT_5A;
 			break;
 		default:
-			/* [TODO] Report an error, then return */
+			
 			return;
 	}
 	
@@ -303,7 +302,7 @@ void Gpt_EnableNotification(Gpt_Channel_t ChannelId)
 			interruptId = TIMER_32_64_BIT_5A;
 			break;
 		default:
-			/* [TODO] Report an error, then return */
+			
 			return;
 	}
 	
@@ -384,7 +383,7 @@ void Gpt_StartTimer(Gpt_Channel_t ChannelId, Gpt_ValueType Value)
 			timerWidth = 64;
 			break;
 		default:
-			/* [TODO] Report an error, then return */
+			
 			return;
 	}
 	
@@ -481,7 +480,7 @@ void Gpt_StopTimer(Gpt_Channel_t ChannelId)
 			channelPtr = (volatile uint8_t*)GPT_32BIT_WIDE_TIMER5_BASE_ADDRESS;
 			break;
 		default:
-			/* [TODO] Report an error, then return */
+			
 			return;
 	}
 	
@@ -559,7 +558,7 @@ Gpt_ValueType Gpt_GetTimeElapsed(Gpt_Channel_t ChannelId)
 			timerWidth = 64;
 			break;
 		default:
-			/* [TODO] Report an error, then return */
+			
 			break;
 	}
 	
@@ -653,7 +652,7 @@ Gpt_ValueType Gpt_GetTimeRemaining(Gpt_Channel_t ChannelId)
 			timerWidth = 64;
 			break;
 		default:
-			/* [TODO] Report an error, then return */
+			
 			break;
 	}
 	
