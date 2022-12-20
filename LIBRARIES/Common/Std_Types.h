@@ -2,8 +2,6 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *         File:  Std_Types.h
- *    Component:  -
- *       Module:  -
  *
  *  Description:  Provision of Standard Types
  *

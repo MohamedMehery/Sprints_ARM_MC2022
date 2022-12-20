@@ -2,7 +2,6 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *  File:  		  Macros.h
- *  Module:  	  Macros
  *
  *  Description:  Header file for the common macros
  *  

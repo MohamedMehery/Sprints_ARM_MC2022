@@ -2,7 +2,6 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *  File:  		  Mcu_Hw.h
- *  Module:  	  Mcu_Hw
  *
  *  Description:  Header file for the microcontroller hardware specifications like registers' definitions
  *  
