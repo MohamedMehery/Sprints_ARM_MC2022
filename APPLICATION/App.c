@@ -10,7 +10,7 @@ int main(void)
 	 *		2. Press switch 2 in Tiva C LaunchPad as you like [every press = one second] -> You will see a green blink for a moment as an acknowledment.
 	 *		3. After you enter the number of seconds, press switch 1 again -> You will see a blue blink for a moment as an acknowledment.
 	 */
-	uint8_t onPeriod = get_pulse_timing(button1, LED_2, button2, LED_3, PULL_UP);
+	uint8_t on_period = get_pulse_timing(button1, LED_2, button2, LED_3, PULL_UP);
 	
 	/* 
 	 * To enter the time of OFF period in seconds:
@@ -18,12 +18,12 @@ int main(void)
 	 *		2. Press switch 2 in Tiva C LaunchPad as you like [every press = one second] -> You will see a green blink for a moment as an acknowledment.
 	 *		3. After you enter the number of seconds, press switch 1 again -> You will see a blue blink for a moment as an acknowledment.
 	 */
-	uint8_t offPeriod = get_pulse_timing(button1, LED_2, button2, LED_3, PULL_UP);
+	uint8_t off_period = get_pulse_timing(button1, LED_2, button2, LED_3, PULL_UP);
 	
 	while(1)
 	{
 		/* There will be a red blink forever with the entered ON and OFF Periods */
-		led_blink(BLINKING_GPTM, LED_1, 200, onPeriod, offPeriod);
+		led_blink(BLINKING_GPTM, LED_1, 200, on_period, off_period);
 	}
 
 	return 0;

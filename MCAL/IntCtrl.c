@@ -40,9 +40,6 @@ void IntCrtl_Init(void)
 	/* TODO	: Configure Grouping/SubGrouping System in APINT register in SCB */
     SCB_APINT = 0x05FA0000;		/* 8 Group Priority and 1 Sungroup */
     
-    /* TODO : Assign Group/Subgroup priority in NVIC_PRIx Nvic and SCB_SYSPRIx registers */
-	/* TODO : Enable/Disable based on user configurations in NVIC_ENx and SCB_SYSHNDCTRL registers */
-	
 	int exc = 0;
 	IntCtrl_PriorityLevel priority;
 	for (exc = 0; exc < PROCESSOR_EXCEPTIONS_NUM; exc++)
