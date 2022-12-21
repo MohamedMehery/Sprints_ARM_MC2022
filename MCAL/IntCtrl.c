@@ -136,7 +136,7 @@ void IntCrtl_Init(void)
 			else if ((irq_id > 127) && (irq_id < 139))
 				SET_BIT(NVIC_DIS4, irq_id);
 			else
-				/* [TODO] Reprot the error, then return */
+				/*  return */
 				return;
 		}
 		else if (ConfigPtr->interrupts[irq].mode == INT_ENABLED)
@@ -177,7 +177,7 @@ void IntCrtl_Init(void)
 			else if ((irq_id > 127) && (irq_id < 139))
 				SET_BIT(NVIC_EN4, irq_id);
 			else
-				/* [TODO] Reprot the error, then return */
+				/*  return */
 				return;
 		}
 	}
@@ -231,7 +231,7 @@ void IntCtrl_EnableInterrupt(IntCtrl_InterruptType InterruptId, IntCtrl_Priority
 	else if ((irq_id > 127) && (irq_id < 139))
 		SET_BIT(NVIC_EN4, irq_id);
 	else
-		/* [TODO] Reprot the error, then return */
+		/*  return */
 		return;
 		
 	/* Update the configuration structure */	
@@ -272,7 +272,7 @@ void IntCtrl_DisableInterrupt(IntCtrl_InterruptType InterruptId)
 	else if ((InterruptId > 127) && (InterruptId < 139))
 		SET_BIT(NVIC_DIS4, InterruptId);
 	else
-		/* [TODO] Reprot the error, then return */
+		/*  return */
 		return;
 		
 	/* Update the configuration structure */	
