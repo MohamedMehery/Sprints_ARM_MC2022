@@ -36,9 +36,7 @@ void IntCrtl_Init(void)
 {
 	/* Create a pointer to the configuration structure */
 	IntCtrl_ConfigType *ConfigPtr = &IntCtrl_Config;
-	
-	/* TODO	: Configure Grouping/SubGrouping System in APINT register in SCB */
-    SCB_APINT = 0x05FA0000;		/* 8 Group Priority and 1 Sungroup */
+	SCB_APINT = 0x05FA0000;		/* 8 Group Priority and 1 Sungroup */
     
 	int exc = 0;
 	IntCtrl_PriorityLevel priority;
