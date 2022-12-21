@@ -3,7 +3,7 @@
  *  -------------------------------------------------------------------------------------------------------------------
  *  File:  		  Dio.c
  *  Module:  	  Dio
- *  Description:  Source file for Dio Module's driver
+ *  Description:  Source file for Dio Module's firmware
  *  -------------------------------------------------------------------------------------------------------------------
  *	Author: 	  Mohamed Abdelnasser
  *	Date:		  5/12/2022

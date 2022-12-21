@@ -3,7 +3,7 @@
  *  -------------------------------------------------------------------------------------------------------------------
  *  File:  		  Port.c
  *  Module:  	  Port
- *  Description:  Source file for Port Module's driver
+ *  Description:  Source file for Port Module's firmware
  *  -------------------------------------------------------------------------------------------------------------------
  *	Author: 	  Mohamed Abdelnasser
  *	Date:		  5/12/2022

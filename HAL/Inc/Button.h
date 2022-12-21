@@ -3,7 +3,7 @@
  *  -------------------------------------------------------------------------------------------------------------------
  *  File:  		  Button.h
  *  Module:  	  Button
- *  Description:  Header file for Button driver
+ *  Description:  Header file for Button firmware
  *  -------------------------------------------------------------------------------------------------------------------
  *	Author: 	Mohamed Abdelnasser
  *	Date:		  15/12/2022

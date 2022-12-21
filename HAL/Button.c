@@ -3,7 +3,7 @@
  *  -------------------------------------------------------------------------------------------------------------------
  *  File:  		  Button.c
  *  Module:  	  Button
- *  Description:  Source file for Button driver
+ *  Description:  Source file for Button firmware
  *  -------------------------------------------------------------------------------------------------------------------
  *	Author: 	Mohamed Abdelnasser
  *	Date:		  15/12/2022

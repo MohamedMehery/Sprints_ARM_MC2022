@@ -3,7 +3,7 @@
  *  -------------------------------------------------------------------------------------------------------------------
  *  File:  		  Gpt.c
  *  Module:  	  Gpt
- *  Description:  Source file for TM4C123GH6PM MCU - Gpt Module's driver
+ *  Description:  Source file for TM4C123GH6PM MCU - Gpt Module's firmware
  *  -------------------------------------------------------------------------------------------------------------------
  *	Author: 	  Mohamed Abdelnasser
  *	Date:		  5/12/2022
