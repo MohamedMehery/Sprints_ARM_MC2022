@@ -23,7 +23,7 @@ int main(void)
 	while(1)
 	{
 		/* There will be a red blink forever with the entered ON and OFF Periods */
-		Blink_Start(BLINKING_GPTM, LED_1, 200, onPeriod, offPeriod);
+		led_blink(BLINKING_GPTM, LED_1, 200, onPeriod, offPeriod);
 	}
 
 	return 0;

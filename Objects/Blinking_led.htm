@@ -3,11 +3,11 @@
 <title>Static Call Graph - [.\Objects\Blinking_led.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\Blinking_led.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Tue Dec 20 22:13:59 2022
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Wed Dec 21 20:26:16 2022
 <BR><P>
 <H3>Maximum Stack Usage =         88 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
-__rt_entry_main &rArr; main &rArr; Blink_Start &rArr; Gpt_Init &rArr; IntCtrl_EnableInterrupt
+__rt_entry_main &rArr; main &rArr; led_blink &rArr; Gpt_Init &rArr; IntCtrl_EnableInterrupt
 <P>
 <H3>
 Functions with no stack information
@@ -146,7 +146,7 @@ Function Pointers
  <LI><a href="#[49]">ADC1SS1_Handler</a> from startup_tm4c123.o(.text) referenced from startup_tm4c123.o(RESET)
  <LI><a href="#[4a]">ADC1SS2_Handler</a> from startup_tm4c123.o(.text) referenced from startup_tm4c123.o(RESET)
  <LI><a href="#[4b]">ADC1SS3_Handler</a> from startup_tm4c123.o(.text) referenced from startup_tm4c123.o(RESET)
- <LI><a href="#[87]">Blinking_CallBack</a> from blink.o(i.Blinking_CallBack) referenced from blink.o(i.Blink_Start)
+ <LI><a href="#[87]">Blinking_CallBack</a> from blink.o(i.Blinking_CallBack) referenced from blink.o(i.led_blink)
  <LI><a href="#[13]">BusFault_Handler</a> from startup_tm4c123.o(.text) referenced from startup_tm4c123.o(RESET)
  <LI><a href="#[40]">CAN0_Handler</a> from startup_tm4c123.o(.text) referenced from startup_tm4c123.o(RESET)
  <LI><a href="#[41]">CAN1_Handler</a> from startup_tm4c123.o(.text) referenced from startup_tm4c123.o(RESET)
@@ -387,7 +387,7 @@ Global Symbols
 
 <P><STRONG><a name="[94]"></a>__rt_entry_main</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$0000000D))
 <BR><BR>[Stack]<UL><LI>Max Depth = 88 + Unknown Stack Size
-<LI>Call Chain = __rt_entry_main &rArr; main &rArr; Blink_Start &rArr; Gpt_Init &rArr; IntCtrl_EnableInterrupt
+<LI>Call Chain = __rt_entry_main &rArr; main &rArr; led_blink &rArr; Gpt_Init &rArr; IntCtrl_EnableInterrupt
 </UL>
 <BR>[Calls]<UL><LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 <LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;exit
@@ -1263,77 +1263,66 @@ Global Symbols
 
 <P><STRONG><a name="[d7]"></a>__semihosting_library_function</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, indicate_semi.o(.text), UNUSED)
 
-<P><STRONG><a name="[9d]"></a>Blink_Start</STRONG> (Thumb, 196 bytes, Stack size 40 bytes, blink.o(i.Blink_Start))
-<BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = Blink_Start &rArr; Gpt_Init &rArr; IntCtrl_EnableInterrupt
-</UL>
-<BR>[Calls]<UL><LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Gpt_StartTimer
-<LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Gpt_Init
-<LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Dio_WriteChannel
-<LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Led_Init
-</UL>
-<BR>[Called By]<UL><LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
-</UL>
-
 <P><STRONG><a name="[87]"></a>Blinking_CallBack</STRONG> (Thumb, 18 bytes, Stack size 8 bytes, blink.o(i.Blinking_CallBack))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = Blinking_CallBack &rArr; Led_Toggle
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Led_Toggle
+<BR>[Calls]<UL><LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Led_Toggle
 </UL>
-<BR>[Address Reference Count : 1]<UL><LI> blink.o(i.Blink_Start)
+<BR>[Address Reference Count : 1]<UL><LI> blink.o(i.led_blink)
 </UL>
-<P><STRONG><a name="[a3]"></a>Button_GetState</STRONG> (Thumb, 62 bytes, Stack size 16 bytes, button.o(i.Button_GetState))
+<P><STRONG><a name="[9e]"></a>Button_GetState</STRONG> (Thumb, 62 bytes, Stack size 16 bytes, button.o(i.Button_GetState))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = Button_GetState
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Dio_ReadChannel
+<BR>[Calls]<UL><LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Dio_ReadChannel
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_pulse_timing
+<BR>[Called By]<UL><LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_pulse_timing
 </UL>
 
-<P><STRONG><a name="[a5]"></a>Button_Init</STRONG> (Thumb, 10 bytes, Stack size 8 bytes, button.o(i.Button_Init))
+<P><STRONG><a name="[a0]"></a>Button_Init</STRONG> (Thumb, 10 bytes, Stack size 8 bytes, button.o(i.Button_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = Button_Init &rArr; Port_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Port_Init
+<BR>[Calls]<UL><LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Port_Init
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_pulse_timing
+<BR>[Called By]<UL><LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_pulse_timing
 </UL>
 
-<P><STRONG><a name="[a8]"></a>Dio_FlipChannel</STRONG> (Thumb, 572 bytes, Stack size 0 bytes, dio.o(i.Dio_FlipChannel))
+<P><STRONG><a name="[a4]"></a>Dio_FlipChannel</STRONG> (Thumb, 572 bytes, Stack size 0 bytes, dio.o(i.Dio_FlipChannel))
 <BR><BR>[Called By]<UL><LI><a href="#[4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Gpt_Notification_1
 <LI><a href="#[3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Gpt_Notification_0
-<LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Led_Toggle
+<LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Led_Toggle
 </UL>
 
-<P><STRONG><a name="[a4]"></a>Dio_ReadChannel</STRONG> (Thumb, 268 bytes, Stack size 0 bytes, dio.o(i.Dio_ReadChannel))
-<BR><BR>[Called By]<UL><LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Button_GetState
+<P><STRONG><a name="[9f]"></a>Dio_ReadChannel</STRONG> (Thumb, 268 bytes, Stack size 0 bytes, dio.o(i.Dio_ReadChannel))
+<BR><BR>[Called By]<UL><LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Button_GetState
 </UL>
 
-<P><STRONG><a name="[9f]"></a>Dio_WriteChannel</STRONG> (Thumb, 374 bytes, Stack size 8 bytes, dio.o(i.Dio_WriteChannel))
+<P><STRONG><a name="[a7]"></a>Dio_WriteChannel</STRONG> (Thumb, 374 bytes, Stack size 8 bytes, dio.o(i.Dio_WriteChannel))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = Dio_WriteChannel
 </UL>
-<BR>[Called By]<UL><LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Led_TurnOn
-<LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Led_TurnOff
-<LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Blink_Start
+<BR>[Called By]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Led_TurnOn
+<LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Led_TurnOff
+<LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;led_blink
 </UL>
 
-<P><STRONG><a name="[a0]"></a>Gpt_Init</STRONG> (Thumb, 426 bytes, Stack size 16 bytes, gpt.o(i.Gpt_Init))
+<P><STRONG><a name="[a2]"></a>Gpt_Init</STRONG> (Thumb, 426 bytes, Stack size 16 bytes, gpt.o(i.Gpt_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = Gpt_Init &rArr; IntCtrl_EnableInterrupt
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IntCtrl_EnableInterrupt
+<BR>[Calls]<UL><LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IntCtrl_EnableInterrupt
 </UL>
-<BR>[Called By]<UL><LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Blink_Start
+<BR>[Called By]<UL><LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;led_blink
 </UL>
 
 <P><STRONG><a name="[3]"></a>Gpt_Notification_0</STRONG> (Thumb, 20 bytes, Stack size 8 bytes, gpt_lcfg.o(i.Gpt_Notification_0))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = Gpt_Notification_0
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Dio_FlipChannel
+<BR>[Calls]<UL><LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Dio_FlipChannel
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> gpt_lcfg.o(.data)
 </UL>
 <P><STRONG><a name="[4]"></a>Gpt_Notification_1</STRONG> (Thumb, 20 bytes, Stack size 8 bytes, gpt_lcfg.o(i.Gpt_Notification_1))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = Gpt_Notification_1
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Dio_FlipChannel
+<BR>[Calls]<UL><LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Dio_FlipChannel
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> gpt_lcfg.o(.data)
 </UL>
@@ -1367,56 +1356,56 @@ Global Symbols
 <P><STRONG><a name="[c]"></a>Gpt_Notification_9</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, gpt_lcfg.o(i.Gpt_Notification_9))
 <BR>[Address Reference Count : 1]<UL><LI> gpt_lcfg.o(.data)
 </UL>
-<P><STRONG><a name="[a1]"></a>Gpt_StartTimer</STRONG> (Thumb, 220 bytes, Stack size 36 bytes, gpt.o(i.Gpt_StartTimer))
+<P><STRONG><a name="[ab]"></a>Gpt_StartTimer</STRONG> (Thumb, 220 bytes, Stack size 36 bytes, gpt.o(i.Gpt_StartTimer))
 <BR><BR>[Stack]<UL><LI>Max Depth = 36<LI>Call Chain = Gpt_StartTimer
 </UL>
-<BR>[Called By]<UL><LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Blink_Start
+<BR>[Called By]<UL><LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;led_blink
 </UL>
 
-<P><STRONG><a name="[a7]"></a>IntCtrl_EnableInterrupt</STRONG> (Thumb, 346 bytes, Stack size 24 bytes, intctrl.o(i.IntCtrl_EnableInterrupt))
+<P><STRONG><a name="[a3]"></a>IntCtrl_EnableInterrupt</STRONG> (Thumb, 346 bytes, Stack size 24 bytes, intctrl.o(i.IntCtrl_EnableInterrupt))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = IntCtrl_EnableInterrupt
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Gpt_Init
+<BR>[Called By]<UL><LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Gpt_Init
 </UL>
 
-<P><STRONG><a name="[9e]"></a>Led_Init</STRONG> (Thumb, 10 bytes, Stack size 8 bytes, led.o(i.Led_Init))
+<P><STRONG><a name="[a5]"></a>Led_Init</STRONG> (Thumb, 10 bytes, Stack size 8 bytes, led.o(i.Led_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = Led_Init &rArr; Port_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Port_Init
+<BR>[Calls]<UL><LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Port_Init
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_pulse_timing
-<LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Blink_Start
+<BR>[Called By]<UL><LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;led_blink
+<LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_pulse_timing
 </UL>
 
-<P><STRONG><a name="[a2]"></a>Led_Toggle</STRONG> (Thumb, 12 bytes, Stack size 8 bytes, led.o(i.Led_Toggle))
+<P><STRONG><a name="[9d]"></a>Led_Toggle</STRONG> (Thumb, 12 bytes, Stack size 8 bytes, led.o(i.Led_Toggle))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = Led_Toggle
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Dio_FlipChannel
+<BR>[Calls]<UL><LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Dio_FlipChannel
 </UL>
 <BR>[Called By]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Blinking_CallBack
 </UL>
 
-<P><STRONG><a name="[a9]"></a>Led_TurnOff</STRONG> (Thumb, 14 bytes, Stack size 8 bytes, led.o(i.Led_TurnOff))
+<P><STRONG><a name="[a6]"></a>Led_TurnOff</STRONG> (Thumb, 14 bytes, Stack size 8 bytes, led.o(i.Led_TurnOff))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = Led_TurnOff &rArr; Dio_WriteChannel
 </UL>
-<BR>[Calls]<UL><LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Dio_WriteChannel
+<BR>[Calls]<UL><LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Dio_WriteChannel
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_pulse_timing
+<BR>[Called By]<UL><LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_pulse_timing
 </UL>
 
-<P><STRONG><a name="[aa]"></a>Led_TurnOn</STRONG> (Thumb, 14 bytes, Stack size 8 bytes, led.o(i.Led_TurnOn))
+<P><STRONG><a name="[a8]"></a>Led_TurnOn</STRONG> (Thumb, 14 bytes, Stack size 8 bytes, led.o(i.Led_TurnOn))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = Led_TurnOn &rArr; Dio_WriteChannel
 </UL>
-<BR>[Calls]<UL><LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Dio_WriteChannel
+<BR>[Calls]<UL><LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Dio_WriteChannel
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_pulse_timing
+<BR>[Called By]<UL><LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_pulse_timing
 </UL>
 
-<P><STRONG><a name="[a6]"></a>Port_Init</STRONG> (Thumb, 1240 bytes, Stack size 12 bytes, port.o(i.Port_Init))
+<P><STRONG><a name="[a1]"></a>Port_Init</STRONG> (Thumb, 1240 bytes, Stack size 12 bytes, port.o(i.Port_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = Port_Init
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Button_Init
-<LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Led_Init
+<BR>[Called By]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Button_Init
+<LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Led_Init
 </UL>
 
 <P><STRONG><a name="[85]"></a>SystemInit</STRONG> (Thumb, 112 bytes, Stack size 0 bytes, system_tm4c123.o(i.SystemInit))
@@ -1432,23 +1421,34 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_tm4c123.o(RESET)
 </UL>
-<P><STRONG><a name="[ab]"></a>get_pulse_timing</STRONG> (Thumb, 166 bytes, Stack size 32 bytes, input.o(i.get_pulse_timing))
+<P><STRONG><a name="[a9]"></a>get_pulse_timing</STRONG> (Thumb, 166 bytes, Stack size 32 bytes, input.o(i.get_pulse_timing))
 <BR><BR>[Stack]<UL><LI>Max Depth = 52<LI>Call Chain = get_pulse_timing &rArr; Button_Init &rArr; Port_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Button_Init
-<LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Button_GetState
-<LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Led_TurnOn
-<LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Led_TurnOff
-<LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Led_Init
+<BR>[Calls]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Button_Init
+<LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Button_GetState
+<LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Led_TurnOn
+<LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Led_TurnOff
+<LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Led_Init
+</UL>
+<BR>[Called By]<UL><LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+</UL>
+
+<P><STRONG><a name="[aa]"></a>led_blink</STRONG> (Thumb, 196 bytes, Stack size 40 bytes, blink.o(i.led_blink))
+<BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = led_blink &rArr; Gpt_Init &rArr; IntCtrl_EnableInterrupt
+</UL>
+<BR>[Calls]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Gpt_StartTimer
+<LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Gpt_Init
+<LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Dio_WriteChannel
+<LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Led_Init
 </UL>
 <BR>[Called By]<UL><LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
 <P><STRONG><a name="[95]"></a>main</STRONG> (Thumb, 56 bytes, Stack size 8 bytes, app.o(i.main))
-<BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = main &rArr; Blink_Start &rArr; Gpt_Init &rArr; IntCtrl_EnableInterrupt
+<BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = main &rArr; led_blink &rArr; Gpt_Init &rArr; IntCtrl_EnableInterrupt
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_pulse_timing
-<LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Blink_Start
+<BR>[Calls]<UL><LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;led_blink
+<LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_pulse_timing
 </UL>
 <BR>[Called By]<UL><LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry_main
 </UL>

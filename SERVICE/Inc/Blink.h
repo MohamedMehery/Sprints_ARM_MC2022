@@ -20,7 +20,7 @@
  *  GLOBAL FUNCTIONS PROTOTYPES
  *********************************************************************************************************************/
 /*******************************************************************************
-* Service Name: Blink_Start
+* Service Name: led_blink
 * Service ID[hex]: 0x00
 * Sync/Async: Synchronous
 * Reentrancy: Non-Reentrant
@@ -34,7 +34,7 @@
 * Return value: void
 * Description: Function to initialize and start blinking service
 *******************************************************************************/
-void Blink_Start(Service_TimerChannel_t TimerChannle, Service_Device_Channel DeviceChannel, Service_TimeType Time, Service_HighPeriodType HighPeriod, Service_LowPeriod_t LowPeriod);
+void led_blink(Service_TimerChannel_t TimerChannle, Service_Device_Channel DeviceChannel, Service_TimeType Time, Service_HighPeriodType HighPeriod, Service_LowPeriod_t LowPeriod);
  
 /*******************************************************************************
 * Service Name: Blink_Stop
