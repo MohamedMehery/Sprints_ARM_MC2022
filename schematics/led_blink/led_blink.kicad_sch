@@ -4,6 +4,13 @@
 
   (paper "A4")
 
+  (title_block
+    (title "Led blink")
+    (date "2022-12-22")
+    (rev "Mohamed ABdelnasser")
+    (company "Sprints ARM master class")
+  )
+
   (lib_symbols
     (symbol "Connector:Conn_01x02_Male" (pin_names (offset 1.016) hide) (in_bom yes) (on_board yes)
       (property "Reference" "J" (id 0) (at 0 2.54 0)
@@ -1051,7 +1058,6 @@
       )
     )
   )
-
 
   (junction (at 83.82 172.72) (diameter 0) (color 0 0 0 0)
     (uuid 04f20a58-b6d8-4528-a163-1a3c190223df)
