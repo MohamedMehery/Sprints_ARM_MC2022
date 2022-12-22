@@ -15,7 +15,7 @@
 * INCLUDES
 *********************************************************************************************************************/
 #include "Service_Types.h"
- 
+#define TIMEOUT 200
 /**********************************************************************************************************************
  *  GLOBAL FUNCTIONS PROTOTYPES
  *********************************************************************************************************************/
@@ -29,8 +29,6 @@
 *				   Time - How long the blinking should be,
 *				   HighPeriod - How long to stay high
 *				   LowPeriod - How long to stay low
-* Parameters (inout): None
-* Parameters (out): None
 * Return value: void
 * Description: Function to initialize and start blinking service
 *******************************************************************************/
@@ -42,8 +40,6 @@ void led_blink(Service_TimerChannel_t TimerChannle, Service_Device_Channel Devic
 * Sync/Async: Synchronous
 * Reentrancy: Reentrant
 * Parameters (in): DeviceChannel - The device which is blinking
-* Parameters (inout): None
-* Parameters (out): None
 * Return value: void
 * Description: Function to stop blinking
 *******************************************************************************/

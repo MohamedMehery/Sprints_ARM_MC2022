@@ -9,7 +9,7 @@ int main(void)
 	
 	while(1)
 	{
-		led_blink(BLINKING_GPTM, LED_1, 200, on_period, off_period);
+		led_blink(BLINKING_GPTM, LED_1, TIMEOUT, on_period, off_period);
 	}
 
 	return 0;
