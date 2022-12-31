@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Objects\Blinking_led.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\Blinking_led.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Thu Dec 22 19:57:23 2022
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Sat Dec 31 10:36:56 2022
 <BR><P>
 <H3>Maximum Stack Usage =         88 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -146,7 +146,7 @@ Function Pointers
  <LI><a href="#[49]">ADC1SS1_Handler</a> from startup_tm4c123.o(.text) referenced from startup_tm4c123.o(RESET)
  <LI><a href="#[4a]">ADC1SS2_Handler</a> from startup_tm4c123.o(.text) referenced from startup_tm4c123.o(RESET)
  <LI><a href="#[4b]">ADC1SS3_Handler</a> from startup_tm4c123.o(.text) referenced from startup_tm4c123.o(RESET)
- <LI><a href="#[87]">Blinking_CallBack</a> from blink.o(i.Blinking_CallBack) referenced from blink.o(i.led_blink)
+ <LI><a href="#[87]">Blinking_CallBack</a> from blink.o(i.Blinking_CallBack) referenced from gpt.o(i.Gpt_Init)
  <LI><a href="#[13]">BusFault_Handler</a> from startup_tm4c123.o(.text) referenced from startup_tm4c123.o(RESET)
  <LI><a href="#[40]">CAN0_Handler</a> from startup_tm4c123.o(.text) referenced from startup_tm4c123.o(RESET)
  <LI><a href="#[41]">CAN1_Handler</a> from startup_tm4c123.o(.text) referenced from startup_tm4c123.o(RESET)
@@ -1268,7 +1268,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Led_Toggle
 </UL>
-<BR>[Address Reference Count : 1]<UL><LI> blink.o(i.led_blink)
+<BR>[Address Reference Count : 1]<UL><LI> gpt.o(i.Gpt_Init)
 </UL>
 <P><STRONG><a name="[9e]"></a>Button_GetState</STRONG> (Thumb, 62 bytes, Stack size 16 bytes, button.o(i.Button_GetState))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = Button_GetState
@@ -1304,7 +1304,7 @@ Global Symbols
 <LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;led_blink
 </UL>
 
-<P><STRONG><a name="[a2]"></a>Gpt_Init</STRONG> (Thumb, 426 bytes, Stack size 16 bytes, gpt.o(i.Gpt_Init))
+<P><STRONG><a name="[a2]"></a>Gpt_Init</STRONG> (Thumb, 434 bytes, Stack size 16 bytes, gpt.o(i.Gpt_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = Gpt_Init &rArr; IntCtrl_EnableInterrupt
 </UL>
 <BR>[Calls]<UL><LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IntCtrl_EnableInterrupt
@@ -1433,7 +1433,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[aa]"></a>led_blink</STRONG> (Thumb, 196 bytes, Stack size 40 bytes, blink.o(i.led_blink))
+<P><STRONG><a name="[aa]"></a>led_blink</STRONG> (Thumb, 176 bytes, Stack size 40 bytes, blink.o(i.led_blink))
 <BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = led_blink &rArr; Gpt_Init &rArr; IntCtrl_EnableInterrupt
 </UL>
 <BR>[Calls]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Gpt_StartTimer

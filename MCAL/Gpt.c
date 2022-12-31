@@ -18,7 +18,7 @@
 #include "Gpt_regs.h"
 #include "Mcu_Hw.h"
 #include "Macros.h"
-
+#include "Blink.h"
 /**********************************************************************************************************************
  *  GLOBAL FUNCTIONS
  *********************************************************************************************************************/
@@ -37,7 +37,7 @@
 *              - Set the operation mode of GPT to ONESHOT or CONTINOUS Mode
 *              - Start all the enabled GPT Predefined timers at value = 0
 *******************************************************************************/
-void Gpt_Init(const Gpt_Channel_Config_t* ConfigPtr)
+void Gpt_Init( Gpt_Channel_Config_t* ConfigPtr)
 {
 	if (ConfigPtr->isEnabled == DISABLED)
 		return;
@@ -46,7 +46,10 @@ void Gpt_Init(const Gpt_Channel_Config_t* ConfigPtr)
 	
 	volatile uint8_t* channelPtr = NULL_PTR;
 	volatile Gpt_TimerInterruptType interruptId = 0;
-	
+	/* Set the channel mode to continous */
+	ConfigPtr->mode = GPT_CHANNEL_MODE_CONTINOUS;
+	/* Set the call back function */
+	ConfigPtr->notification = Blinking_CallBack;	
 	/* Enable the clock to the dedicated channel */
 	switch (ConfigPtr->channelId)
 	{

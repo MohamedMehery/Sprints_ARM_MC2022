@@ -44,6 +44,18 @@ void led_blink(Service_TimerChannel_t TimerChannle, Service_Device_Channel Devic
 * Description: Function to stop blinking
 *******************************************************************************/
 void Blink_Stop(Service_Device_Channel DeviceChannel);
+
+/*******************************************************************************
+* Service Name: Blinking_CallBack
+* Service ID[hex]: 0x01
+* Sync/Async: Synchronous
+* Reentrancy: Reentrant
+* Parameters (in): void
+* Return value: void
+* Description: timer interrupt call back 
+*******************************************************************************/
+void Blinking_CallBack(void);
+
  
 #endif /* LED_H_ */
 /**********************************************************************************************************************

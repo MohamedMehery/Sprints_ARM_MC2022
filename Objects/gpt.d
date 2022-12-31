@@ -12,3 +12,13 @@
 .\objects\gpt.o: .\MCAL\Inc\Gpt_regs.h
 .\objects\gpt.o: .\LIBRARIES\Common\Mcu_Hw.h
 .\objects\gpt.o: .\LIBRARIES\Common\Macros.h
+.\objects\gpt.o: .\SERVICE\Inc\Blink.h
+.\objects\gpt.o: .\SERVICE\Inc\Service_Types.h
+.\objects\gpt.o: .\HAL\Inc\Led.h
+.\objects\gpt.o: .\MCAL\Inc\Dio.h
+.\objects\gpt.o: .\LIBRARIES\Config\Inc\Dio_Cfg.h
+.\objects\gpt.o: .\MCAL\Inc\Dio_Types.h
+.\objects\gpt.o: .\MCAL\Inc\Port_Types.h
+.\objects\gpt.o: .\HAL\Inc\Button.h
+.\objects\gpt.o: .\MCAL\Inc\Port.h
+.\objects\gpt.o: .\LIBRARIES\Config\Inc\Port_Cfg.h
