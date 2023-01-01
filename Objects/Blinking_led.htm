@@ -3,9 +3,9 @@
 <title>Static Call Graph - [.\Objects\Blinking_led.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\Blinking_led.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Sat Dec 31 10:36:56 2022
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Sun Jan 01 10:11:52 2023
 <BR><P>
-<H3>Maximum Stack Usage =         88 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
+<H3>Maximum Stack Usage =         96 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
 __rt_entry_main &rArr; main &rArr; led_blink &rArr; Gpt_Init &rArr; IntCtrl_EnableInterrupt
 <P>
@@ -146,7 +146,8 @@ Function Pointers
  <LI><a href="#[49]">ADC1SS1_Handler</a> from startup_tm4c123.o(.text) referenced from startup_tm4c123.o(RESET)
  <LI><a href="#[4a]">ADC1SS2_Handler</a> from startup_tm4c123.o(.text) referenced from startup_tm4c123.o(RESET)
  <LI><a href="#[4b]">ADC1SS3_Handler</a> from startup_tm4c123.o(.text) referenced from startup_tm4c123.o(RESET)
- <LI><a href="#[87]">Blinking_CallBack</a> from blink.o(i.Blinking_CallBack) referenced from gpt.o(i.Gpt_Init)
+ <LI><a href="#[87]">Blinking_CallBack</a> from app.o(i.Blinking_CallBack) referenced from gpt.o(i.Gpt_Init)
+ <LI><a href="#[87]">Blinking_CallBack</a> from app.o(i.Blinking_CallBack) referenced from app.o(i.main)
  <LI><a href="#[13]">BusFault_Handler</a> from startup_tm4c123.o(.text) referenced from startup_tm4c123.o(RESET)
  <LI><a href="#[40]">CAN0_Handler</a> from startup_tm4c123.o(.text) referenced from startup_tm4c123.o(RESET)
  <LI><a href="#[41]">CAN1_Handler</a> from startup_tm4c123.o(.text) referenced from startup_tm4c123.o(RESET)
@@ -366,8 +367,8 @@ Global Symbols
 <P><STRONG><a name="[cb]"></a>__rt_lib_shutdown_user_alloc_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$0000000C))
 
 <P><STRONG><a name="[8c]"></a>__rt_entry</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry.o(.ARM.Collect$$rtentry$$00000000))
-<BR><BR>[Called By]<UL><LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__main
-<LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload_rt2
+<BR><BR>[Called By]<UL><LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload_rt2
+<LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__main
 </UL>
 
 <P><STRONG><a name="[cc]"></a>__rt_entry_presh_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$00000002))
@@ -386,7 +387,7 @@ Global Symbols
 <P><STRONG><a name="[cd]"></a>__rt_entry_postsh_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$00000009))
 
 <P><STRONG><a name="[94]"></a>__rt_entry_main</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$0000000D))
-<BR><BR>[Stack]<UL><LI>Max Depth = 88 + Unknown Stack Size
+<BR><BR>[Stack]<UL><LI>Max Depth = 96 + Unknown Stack Size
 <LI>Call Chain = __rt_entry_main &rArr; main &rArr; led_blink &rArr; Gpt_Init &rArr; IntCtrl_EnableInterrupt
 </UL>
 <BR>[Calls]<UL><LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
@@ -1263,19 +1264,21 @@ Global Symbols
 
 <P><STRONG><a name="[d7]"></a>__semihosting_library_function</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, indicate_semi.o(.text), UNUSED)
 
-<P><STRONG><a name="[87]"></a>Blinking_CallBack</STRONG> (Thumb, 18 bytes, Stack size 8 bytes, blink.o(i.Blinking_CallBack))
+<P><STRONG><a name="[87]"></a>Blinking_CallBack</STRONG> (Thumb, 18 bytes, Stack size 8 bytes, app.o(i.Blinking_CallBack))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = Blinking_CallBack &rArr; Led_Toggle
 </UL>
 <BR>[Calls]<UL><LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Led_Toggle
 </UL>
-<BR>[Address Reference Count : 1]<UL><LI> gpt.o(i.Gpt_Init)
+<BR>[Address Reference Count : 2]<UL><LI> app.o(i.main)
+<LI> gpt.o(i.Gpt_Init)
 </UL>
 <P><STRONG><a name="[9e]"></a>Button_GetState</STRONG> (Thumb, 62 bytes, Stack size 16 bytes, button.o(i.Button_GetState))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = Button_GetState
 </UL>
 <BR>[Calls]<UL><LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Dio_ReadChannel
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_pulse_timing
+<BR>[Called By]<UL><LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;led_blink
+<LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_pulse_timing
 </UL>
 
 <P><STRONG><a name="[a0]"></a>Button_Init</STRONG> (Thumb, 10 bytes, Stack size 8 bytes, button.o(i.Button_Init))
@@ -1433,19 +1436,20 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[aa]"></a>led_blink</STRONG> (Thumb, 176 bytes, Stack size 40 bytes, blink.o(i.led_blink))
+<P><STRONG><a name="[aa]"></a>led_blink</STRONG> (Thumb, 236 bytes, Stack size 40 bytes, blink.o(i.led_blink))
 <BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = led_blink &rArr; Gpt_Init &rArr; IntCtrl_EnableInterrupt
 </UL>
 <BR>[Calls]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Gpt_StartTimer
 <LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Gpt_Init
+<LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Button_GetState
 <LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Dio_WriteChannel
 <LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Led_Init
 </UL>
 <BR>[Called By]<UL><LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[95]"></a>main</STRONG> (Thumb, 56 bytes, Stack size 8 bytes, app.o(i.main))
-<BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = main &rArr; led_blink &rArr; Gpt_Init &rArr; IntCtrl_EnableInterrupt
+<P><STRONG><a name="[95]"></a>main</STRONG> (Thumb, 64 bytes, Stack size 16 bytes, app.o(i.main))
+<BR><BR>[Stack]<UL><LI>Max Depth = 96<LI>Call Chain = main &rArr; led_blink &rArr; Gpt_Init &rArr; IntCtrl_EnableInterrupt
 </UL>
 <BR>[Calls]<UL><LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;led_blink
 <LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_pulse_timing

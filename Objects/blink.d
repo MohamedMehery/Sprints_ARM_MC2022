@@ -18,3 +18,4 @@
 .\objects\blink.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\blink.o: .\LIBRARIES\Config\Inc\Gpt_Cfg.h
 .\objects\blink.o: .\LIBRARIES\Common\Macros.h
+.\objects\blink.o: .\APPLICATION\Inc\App.h

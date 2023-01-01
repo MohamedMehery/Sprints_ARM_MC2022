@@ -15,22 +15,13 @@
 #include "Blink.h"
 #include "Gpt.h"
 #include "Macros.h"
-
+#include "App.h"
 /**********************************************************************************************************************
  *  STATIC GLOBAL DATA
  *********************************************************************************************************************/
-static Service_TimerChannel_t timerChannle;
-static Service_Device_Channel deviceChannel;
-static uint8_t flag = 0;
-
-/**********************************************************************************************************************
- *  LOCAL FUNCTIONS
- *********************************************************************************************************************/
-void Blinking_CallBack(void)
-{
-	Led_Toggle(deviceChannel);
-	flag = 1;
-}
+ Service_TimerChannel_t timerChannle;
+ Service_Device_Channel deviceChannel;
+ uint8_t flag = 0;
 
 /**********************************************************************************************************************
  *  GLOBAL FUNCTIONS
@@ -50,13 +41,17 @@ void Blinking_CallBack(void)
 * Return value: void
 * Description: Function to initialize and start blinking service
 *******************************************************************************/
-void led_blink(Service_TimerChannel_t TimerChannle, Service_Device_Channel DeviceChannel, Service_TimeType Time, Service_HighPeriodType HighPeriod, Service_LowPeriod_t LowPeriod)
+void led_blink(Service_TimerChannel_t TimerChannle, Service_Device_Channel DeviceChannel, Service_TimeType Time, Service_HighPeriodType HighPeriod, Service_LowPeriod_t LowPeriod , timer_cb_t tm_cb)
 {
+	if(tm_cb == 0)
+	{
+		return ;
+	}
 	/* Led Initialization */
 	Led_Init();
 	Dio_WriteChannel(DeviceChannel, DIO_LEVEL_HIGH);
 	
-	/* Blink Init by initializing one of GPTM */
+	/* Blink Init by initializing one of GPT */
 	timerChannle = TimerChannle;
 	
 	GPT_Config.channels[TimerChannle].isEnabled = ENABLED;
@@ -77,8 +72,18 @@ void led_blink(Service_TimerChannel_t TimerChannle, Service_Device_Channel Devic
 		{
 			Gpt_StartTimer(TimerChannle, SECONDS(period));
 		
-			/* Don't advance */
-			while(flag != 1);
+			/* Don't proceed */
+			while(flag != 1)
+			{
+				if(Button_GetState(button1, PULL_UP) == BUTTON_RELEASED )
+				{
+					break;
+				}
+			}
+			if(Button_GetState(button1, PULL_UP) == BUTTON_RELEASED )
+			{
+				break;
+			}			
 			flag = 0;
 			Time -= period;
 		}
@@ -96,10 +101,21 @@ void led_blink(Service_TimerChannel_t TimerChannle, Service_Device_Channel Devic
 
 		Gpt_StartTimer(TimerChannle, SECONDS(period));
 	
-		/* Don't advance */
-		while(flag != 1);
+		/* Don't proceed */
+		while(flag != 1)
+		{
+			if(Button_GetState(button1, PULL_UP) == BUTTON_RELEASED )
+			{
+				break;
+			}			
+		}
 		flag = 0;
 		Time -= period;
+		if(Button_GetState(button1, PULL_UP) == BUTTON_RELEASED )
+		{
+			break;
+		}
+
 	}
 }
  

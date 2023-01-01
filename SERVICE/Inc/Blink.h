@@ -16,6 +16,10 @@
 *********************************************************************************************************************/
 #include "Service_Types.h"
 #define TIMEOUT 200
+
+extern Service_TimerChannel_t timerChannle;
+extern Service_Device_Channel deviceChannel;
+extern uint8_t flag;
 /**********************************************************************************************************************
  *  GLOBAL FUNCTIONS PROTOTYPES
  *********************************************************************************************************************/
@@ -32,8 +36,8 @@
 * Return value: void
 * Description: Function to initialize and start blinking service
 *******************************************************************************/
-void led_blink(Service_TimerChannel_t TimerChannle, Service_Device_Channel DeviceChannel, Service_TimeType Time, Service_HighPeriodType HighPeriod, Service_LowPeriod_t LowPeriod);
- 
+void led_blink(Service_TimerChannel_t TimerChannle, Service_Device_Channel DeviceChannel, Service_TimeType Time, Service_HighPeriodType HighPeriod, Service_LowPeriod_t LowPeriod , timer_cb_t tm_cb);
+
 /*******************************************************************************
 * Service Name: Blink_Stop
 * Service ID[hex]: 0x01
