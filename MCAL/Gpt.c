@@ -37,7 +37,7 @@
 *              - Set the operation mode of GPT to ONESHOT or CONTINOUS Mode
 *              - Start all the enabled GPT Predefined timers at value = 0
 *******************************************************************************/
-void Gpt_Init( Gpt_Channel_Config_t* ConfigPtr)
+void Gpt_Init( Gpt_Channel_Config_t* ConfigPtr , timer_cb_t tm_cb)
 {
 	if (ConfigPtr->isEnabled == DISABLED)
 		return;
@@ -49,7 +49,7 @@ void Gpt_Init( Gpt_Channel_Config_t* ConfigPtr)
 	/* Set the channel mode to continous */
 	ConfigPtr->mode = GPT_CHANNEL_MODE_CONTINOUS;
 	/* Set the call back function */
-	ConfigPtr->notification = Blinking_CallBack;	
+	ConfigPtr->notification = tm_cb;	
 	/* Enable the clock to the dedicated channel */
 	switch (ConfigPtr->channelId)
 	{

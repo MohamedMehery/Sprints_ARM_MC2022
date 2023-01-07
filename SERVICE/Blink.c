@@ -56,7 +56,7 @@ void led_blink(Service_TimerChannel_t TimerChannle, Service_Device_Channel Devic
 	
 	GPT_Config.channels[TimerChannle].isEnabled = ENABLED;
 
-	Gpt_Init(&GPT_Config.channels[TimerChannle]);
+	Gpt_Init(&GPT_Config.channels[TimerChannle] ,tm_cb );
 	
 	Service_TimeType period = 0;
 	

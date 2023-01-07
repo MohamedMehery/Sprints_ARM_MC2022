@@ -41,7 +41,7 @@ typedef void (* timer_cb_t)(void) ;
 *              - Set the operation mode of GPT to ONESHOT or CONTINOUS Mode
 *              - Start all the enabled GPT Predefined timers at value = 0
 *******************************************************************************/
-void Gpt_Init(Gpt_Channel_Config_t* ConfigPtr);
+void Gpt_Init(Gpt_Channel_Config_t* ConfigPtr ,timer_cb_t tm_cb);
 
 /*******************************************************************************
 * Service Name: Gpt_DisableNotification

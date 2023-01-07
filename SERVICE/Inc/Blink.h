@@ -58,7 +58,7 @@ void Blink_Stop(Service_Device_Channel DeviceChannel);
 * Return value: void
 * Description: timer interrupt call back 
 *******************************************************************************/
-void Blinking_CallBack(void);
+void Blinking_led(void);
 
  
 #endif /* LED_H_ */
